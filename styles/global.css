@@ -1,0 +1,191 @@
+@font-face {
+  font-family: 'Maison Neue';
+  src: url('/fonts/MaisonNeue-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('/fonts/MaisonNeueMono-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Maison Neue Mono';
+  src: url('/fonts/MaisonNeueMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Argent CF';
+  src: url('/fonts/ArgentCFRegular.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: 'Argent CF';
+  src: url('/fonts/ArgentCFRegularItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+html {
+  background: white;
+}
+
+body {
+  background: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #97b091;
+  --black: #000000;
+  --light-grey: #ededed;
+  --grey: #d2d2d2;
+  --blue: #469ae8;
+  --yellow: #ffc04d;
+  --font-family-sans-serif: 'Maison Neue', sans-serif;
+  --font-family-serif: 'Argent CF', serif;
+  --border-radius: 22px;
+  --page-side-padding: 50px;
+}
+
+button {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+a,
+p,
+li {
+  letter-spacing: 0.02em;
+  font-family: var(--font-family-sans-serif);
+  color: var(--black);
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 16px 0px;
+  position: relative;
+  font-size: 18px;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: clamp(32px, 4vw, 70px);
+  font-style: normal;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: clamp(32px, 6vw, 70px);
+  }
+}
+
+h2 {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 50px;
+  font-style: normal;
+  margin: 0;
+}
+
+h3 {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 30px;
+  font-style: normal;
+  margin: 0;
+}
+
+h4 {
+  font-family: var(--font-family-serif);
+  font-weight: 600;
+  font-size: 27px;
+  font-style: normal;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --page-side-padding: 45px;
+    --border-radius: 18px;
+  }
+  h2 {
+    font-size: 42px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 26px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --page-side-padding: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --page-side-padding: 36px;
+  }
+  h2 {
+    font-size: 37px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 23px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  :root {
+    --page-side-padding: 20px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 19px;
+  }
+  p {
+    font-size: 15px;
+  }
+}

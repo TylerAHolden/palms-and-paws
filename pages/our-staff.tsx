@@ -4,31 +4,29 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
-import { FAQs } from '../components/FAQs';
 import Image from 'next/image';
 import { JoinTeamSection } from '../components/JoinTeamSection';
 import Layout from '../components/Layout';
 import { Marquee } from '../components/Marquee';
 import { MeetStaffSlider } from '../components/MeetStaffSlider';
-import headerImg from '../public/images/header-image.jpg';
 import { useState } from 'react';
 
-const title = 'Empowering People, Advancing Pets.';
+const title = 'Meet the Team';
 const subtitle =
-  'Welcome to Palms & Paws, a new approach to animal care dedicated to delivering kind and compassionate services in a calm, friendly, professional environment. By innovating new approaches to improving the lives of pets while supporting, educating and empowering pet lovers, we ensure that we always deliver on our promise of Empowering People, Advancing Pets.';
+  'We are incredibly proud of the team we have assembled at Palms & Paws. Our others-oriented leadership approach enables high performing individuals and teams to consistently deliver superior medical attention, while ensuring that our patients and their people feel safe and assured about their treatments.';
 
-export default function Home() {
+export default function Staff() {
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   return (
-    <Layout title='Home' description={`${title} - ${subtitle}`}>
+    <Layout title='Our Staff' description={`${title} - ${subtitle}`}>
       <HeroContainer>
         <HeroImageContainer className={imageIsLoaded ? 'loaded' : ''}>
           <Image
             priority
-            src={headerImg}
-            alt='Palms and Paws Header Image'
+            src='/images/staff-header.jpg'
+            alt='Veterinary doctors diagnosing at cat'
             layout='responsive'
-            width={1423}
+            width={1401}
             height={1185}
             onLoad={(event) => {
               const target = event.target as any;
@@ -41,25 +39,18 @@ export default function Home() {
           />
         </HeroImageContainer>
         <HeroTextContainer>
-          <h1>
-            <i>Empowering</i> People,
-            <br />
-            <i>Advancing</i> Pets.
-          </h1>
+          <h1>Meet the Team</h1>
+
           <p>
-            Welcome to Palms & Paws, a new approach to animal care dedicated to
-            delivering kind and compassionate services in a calm, friendly,
-            professional environment.
-          </p>
-          <p>
-            By innovating new approaches to improving the lives of pets while
-            supporting, educating and empowering pet lovers, we ensure that we
-            always deliver on our promise of Empowering People, Advancing Pets.
+            We are incredibly proud of the team we have assembled at Palms &
+            Paws. Our others-oriented leadership approach enables high
+            performing individuals and teams to consistently deliver superior
+            medical attention, while ensuring that our patients and their people
+            feel safe and assured about their treatments.
           </p>
         </HeroTextContainer>
       </HeroContainer>
       <MeetStaffSlider />
-      <FAQs />
       <Marquee>
         <h3>
           <i>Empowering</i> People, <i>Advancing</i> Pets.
