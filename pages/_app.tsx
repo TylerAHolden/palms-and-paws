@@ -1,12 +1,13 @@
 import '../styles/global.css';
 
+import { createElement, useEffect } from 'react';
+
 import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { Footer } from '../components/Footer';
 import Head from 'next/head';
 import { NavBar } from '../components/NavBar';
-import { createElement } from 'react';
 import { prefix } from 'goober/prefixer';
 import { setup } from 'goober';
 
@@ -16,6 +17,22 @@ setup(createElement, prefix);
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const url = `https://palmsandpaws.com${router.route}`;
+
+  useEffect(() => {
+    const path = window.location.hash;
+    if (path && path.includes('#')) {
+      setTimeout(() => {
+        const id = path.replace('#', '');
+        const el = window.document.getElementById(id);
+        const r = el?.getBoundingClientRect();
+        if (!r) return;
+        window?.top?.scroll({
+          top: pageYOffset + r.top,
+          behavior: 'smooth',
+        });
+      }, 600);
+    }
+  });
 
   return (
     <>

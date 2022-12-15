@@ -245,30 +245,25 @@ export const Footer: React.FC<Props> = () => {
                 <NoScrollLink href='/our-staff'>Meet Your Doctors</NoScrollLink>
               </ListItem>
               <ListItem>
-                {/* @TODO link for join team */}
-                <NoScrollLink href='/'>Join the Team</NoScrollLink>
+                <NoScrollLink href='/our-staff'>Join the Team</NoScrollLink>
               </ListItem>
             </FooterListContainer>
             <FooterListContainer>
               <ListTitle>Hospital</ListTitle>
               <ListItem>
-                {/* @TODO book appointment */}
-                <NoScrollLink href='/'>Book an Appointment</NoScrollLink>
+                <NoScrollLink href='/contact'>Book an Appointment</NoScrollLink>
               </ListItem>
               <ListItem>
-                {/* @TODO link for join team */}
-                <NoScrollLink href='/'>Take a Tour</NoScrollLink>
+                <NoScrollLink href='/hospital'>Take a Tour</NoScrollLink>
               </ListItem>
             </FooterListContainer>
             <FooterListContainer>
               <ListTitle>Culture</ListTitle>
               <ListItem>
-                <NoScrollLink href='/culture#Testimonials'>
-                  Testimonials
-                </NoScrollLink>
+                <NoScrollLink href='/#Testimonials'>Testimonials</NoScrollLink>
               </ListItem>
               <ListItem>
-                <NoScrollLink href='/culture#FAQs'>FAQs</NoScrollLink>
+                <NoScrollLink href='/#FAQs'>FAQs</NoScrollLink>
               </ListItem>
               <ListItem>
                 <NoScrollLink href='/contact'>Contact Us</NoScrollLink>
@@ -277,17 +272,13 @@ export const Footer: React.FC<Props> = () => {
             <FooterListContainer>
               <ListTitle>Services</ListTitle>
               <ListItem>
-                <NoScrollLink href='/services#PrimaryCare'>
-                  Primary Care
-                </NoScrollLink>
+                <NoScrollLink href='/services'>Primary Care</NoScrollLink>
               </ListItem>
               <ListItem>
-                <NoScrollLink href='/services#UrgentCare'>
-                  Urgent Care
-                </NoScrollLink>
+                <NoScrollLink href='/services'>Urgent Care</NoScrollLink>
               </ListItem>
               <ListItem>
-                <NoScrollLink href='/services#SurgeryAndDentistry'>
+                <NoScrollLink href='/services'>
                   Surgery & Dentistry
                 </NoScrollLink>
               </ListItem>

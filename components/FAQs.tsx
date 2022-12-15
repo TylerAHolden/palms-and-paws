@@ -40,7 +40,7 @@ const AccordionItem = styled('div')`
   position: relative;
   border-bottom: 1px solid var(--black);
   padding: 16px 0;
-
+  cursor: pointer;
   @media (max-width: 770px) {
     width: calc(100% - 60px);
   }
@@ -146,7 +146,7 @@ export const FAQs: React.FC<Props> = ({}) => {
   const [activeIndex, setActiveIndex] = React.useState<number | null>(null);
 
   return (
-    <Container>
+    <Container id='FAQs'>
       <InnerContainer>
         <h2>
           Your questions,
@@ -158,7 +158,10 @@ export const FAQs: React.FC<Props> = ({}) => {
             const selected = activeIndex === index;
 
             return (
-              <AccordionItem key={index}>
+              <AccordionItem
+                key={index}
+                onClick={() => setActiveIndex(selected ? -1 : index)}
+              >
                 <AccordionExpandButton
                   onClick={() => setActiveIndex(selected ? -1 : index)}
                 >

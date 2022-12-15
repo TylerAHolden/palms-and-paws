@@ -48,7 +48,6 @@ export default function Services() {
             medical procedures that may be required from time to time, Palms &
             Paws expertly delivers a complete suite of medical care.
           </p>
-          {/* @TODO */}
           <Button>Book Now</Button>
         </HeroTextContainer>
       </HeroContainer>

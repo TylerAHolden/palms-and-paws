@@ -26,6 +26,10 @@ const InnerContent = styled('div')`
 `;
 
 export const JoinTeamSection: React.FC<Props> = () => {
+  const mailToLink = () => {
+    window.open(String('mailto:recruitment@palmsandpaws.com'));
+  };
+
   return (
     <Container>
       <InnerContent>
@@ -35,8 +39,7 @@ export const JoinTeamSection: React.FC<Props> = () => {
           both at ease? Or maybe you’re looking to join a team that allows your
           love of animals to shine? We would love to hear from you.
         </p>
-        {/* @TODO what does this button go to */}
-        <Button>APPLY TO OUR TEAM</Button>
+        <Button onClick={mailToLink}>APPLY TO OUR TEAM</Button>
       </InnerContent>
     </Container>
   );
