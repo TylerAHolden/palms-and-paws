@@ -83,6 +83,7 @@ const StyledButton = styled('a')<any>`
   }
 
   .external-link {
+    transition: transform 0.2s ease;
     width: var(--font-size);
     margin-left: 6px;
     margin-top: -1px;

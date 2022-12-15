@@ -4,7 +4,7 @@ import { motion, useCycle } from 'framer-motion';
 import { AiTwotoneHome } from 'react-icons/ai';
 import { BsFillPeopleFill } from 'react-icons/bs';
 import { FaHospital } from 'react-icons/fa';
-import Image from 'next/image';
+import { Logo } from './Logo';
 import { MdBiotech } from 'react-icons/md';
 import { MdMedicalServices } from 'react-icons/md';
 import { MenuToggle } from './MenuToggle';
@@ -24,7 +24,7 @@ const ScrollBlocker = createGlobalStyles`
 
 const NavBarContainer = styled('div')`
   width: 100%;
-  padding: 30px 0;
+  padding: 20px 0;
   backdrop-filter: blur(6px);
   top: 0px;
   position: sticky;
@@ -56,27 +56,6 @@ const NavbarInnerContainer = styled('div')`
   }
 `;
 
-const LogoImageContainer = styled('div')`
-  width: 252px;
-  position: relative;
-  aspect-ratio: 282 / 40;
-  margin: 0 40px;
-  @media (max-width: 1300px) {
-    width: 232px;
-    margin: 0 20px;
-  }
-
-  @media (max-width: 1100px) {
-    width: 202px;
-    margin: 0 20px;
-  }
-
-  @media (max-width: 500px) {
-    width: 160px;
-    margin: 0 0px;
-  }
-`;
-
 const NavbarLinksContainer = styled('div')`
   @media (max-width: 900px) {
     display: none;
@@ -86,9 +65,23 @@ const NavbarLinksContainer = styled('div')`
   align-items: center;
   &.left {
     justify-content: flex-end;
+    margin-right: 40px;
+    @media (max-width: 1150px) {
+      margin-right: 25px;
+    }
+    @media (max-width: 970px) {
+      margin-right: 0px;
+    }
   }
   &.right {
     justify-content: flex-start;
+    margin-left: 40px;
+    @media (max-width: 1150px) {
+      margin-left: 25px;
+    }
+    @media (max-width: 970px) {
+      margin-left: 0px;
+    }
   }
 `;
 
@@ -231,15 +224,7 @@ export const NavBar: React.FC<Props> = () => {
               </NoScrollLink>
             </NavbarLink>
           </NavbarLinksContainer>
-          <LogoImageContainer>
-            <Image
-              src='/svg/PalmsAndPawsLogo.svg'
-              alt='Palms and Paws Logo'
-              fill
-              sizes='282px'
-              priority
-            />
-          </LogoImageContainer>
+          <Logo />
           <NavbarLinksContainer className='right'>
             <NavbarLink>
               <NoScrollLink href='/hospital' passHref>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from './Buttons';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Logo } from './Logo';
 import NoScrollLink from './NoScrollLink';
 import { styled } from 'goober';
 
@@ -66,6 +67,20 @@ const MadeBy = styled('p')`
   }
 `;
 
+const FullLogoContainer = styled('div')`
+  position: relative;
+  width: 50%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    order: 0;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+`;
+
 const SocialIconsContainer = styled('div')`
   display: flex;
   align-items: center;
@@ -85,12 +100,12 @@ const SocialIconLink = styled('a')`
   }
 `;
 
-const PawCounter = styled('h2')`
-  width: 50%;
-  @media (max-width: 800px) {
-    order: 1;
-  }
-`;
+// const PawCounter = styled('h2')`
+//   width: 50%;
+//   @media (max-width: 800px) {
+//     order: 1;
+//   }
+// `;
 
 // This madness is because klaviyo sucks
 const KlaviyoContainer = styled('div')`
@@ -145,26 +160,26 @@ const KlaviyoContainer = styled('div')`
   }
 `;
 
-const LogoContainer = styled('div')`
-  flex-shrink: 0;
-  margin-right: 40px;
-  position: relative;
-  width: 80px;
-  height: 64px;
+// const LogoContainer = styled('div')`
+//   flex-shrink: 0;
+//   margin-right: 40px;
+//   position: relative;
+//   width: 80px;
+//   height: 64px;
 
-  @media (max-width: 920px) {
-    margin-right: 30px;
-  }
+//   @media (max-width: 920px) {
+//     margin-right: 30px;
+//   }
 
-  @media (max-width: 800px) {
-    order: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-`;
+//   @media (max-width: 800px) {
+//     order: 0;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin-bottom: 20px;
+//   }
+// `;
 
 const FooterListContainer = styled('div')`
   display: flex;
@@ -239,21 +254,24 @@ export const Footer: React.FC<Props> = () => {
     <Container>
       <InnerContainer>
         <FlexContainer>
-          <PawCounter>
-            {/* @TODO PAW COUNTER */}
-            {/* Paw Count  */}
-          </PawCounter>
+          {/* <PawCounter> */}
+          {/* @TODO PAW COUNTER */}
+          {/* Paw Count  */}
+          <FullLogoContainer>
+            <Logo />
+          </FullLogoContainer>
+          {/* </PawCounter> */}
           <KlaviyoContainer
             className={hasLoaded ? 'klaviyo-form-XLLbb3' : ''}
           ></KlaviyoContainer>
-          <LogoContainer>
+          {/* <LogoContainer>
             <Image
               src='/svg/PalmsAndPawsLogoMark.svg'
               width={80}
               height={64}
               alt='palms and paws logo'
             />
-          </LogoContainer>
+          </LogoContainer> */}
           <AddressAndContact>
             <FooterListContainer>
               <ListTitle>Our Address</ListTitle>
