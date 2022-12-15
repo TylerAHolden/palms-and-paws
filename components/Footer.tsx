@@ -39,13 +39,30 @@ const CopyrightFlexContainer = styled('div')`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
   p {
     opacity: 0.5;
     font-size: 14px;
     margin: 0;
+  }
+`;
+
+const MadeBy = styled('p')`
+  && {
+    @media (max-width: 700px) {
+      padding-top: 20px;
+      order 3;
+  }
+    opacity: 0.14;
+    font-size: 12px;
+    margin: 0;
+    transition: opacity 0.2s ease-in-out;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 
@@ -308,6 +325,17 @@ export const Footer: React.FC<Props> = () => {
         <FooterLineBreak />
         <CopyrightFlexContainer>
           <p>Copyright {new Date().getFullYear()} Palms & Paws</p>
+          <MadeBy>
+            Made with <span role='img'>❤️</span> by{' '}
+            <a
+              href='https://thesocialtale.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              The Social Tale
+            </a>{' '}
+            + Tyler Holden
+          </MadeBy>
           <SocialIconsContainer>
             <SocialIconLink
               href='https://www.instagram.com/palmspawsvet/'
