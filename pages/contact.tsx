@@ -2,6 +2,7 @@ import { ValidationError, useForm } from '@formspree/react';
 import { useEffect, useState } from 'react';
 
 import { Button } from '../components/Buttons';
+import Head from 'next/head';
 import Layout from '../components/Layout';
 import { styled } from 'goober';
 
@@ -164,6 +165,13 @@ export default function Services() {
 
   return (
     <Layout title='Contact' description={`${title} - ${subtitle}`}>
+      <Head>
+        <script
+          defer
+          src='https://www.google.com/recaptcha/api.js?render=6Lcnk4EjAAAAAH-qYiQMiHQJhsWy9NcdQ9nvyJ-Q'
+          async
+        />
+      </Head>
       <ContactSection>
         <ContactSectionInner>
           <ContactHeader>

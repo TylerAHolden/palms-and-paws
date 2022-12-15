@@ -50,11 +50,6 @@ class Document extends NextDocument<Props> {
             // And defined it in here
             dangerouslySetInnerHTML={{ __html: ' ' + this.props.css }}
           />
-          <script
-            defer
-            src='https://www.google.com/recaptcha/api.js?render=6Lcnk4EjAAAAAH-qYiQMiHQJhsWy9NcdQ9nvyJ-Q'
-            async
-          />
         </Head>
         <body>
           <Main />
