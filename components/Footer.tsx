@@ -1,8 +1,9 @@
+import React, { useEffect, useState } from 'react';
+
 import { Button } from './Buttons';
 import Image from 'next/image';
 import Link from 'next/link';
 import NoScrollLink from './NoScrollLink';
-import React from 'react';
 import { styled } from 'goober';
 
 type Props = {};
@@ -208,6 +209,11 @@ const FooterLineBreak = styled('div')`
 `;
 
 export const Footer: React.FC<Props> = () => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+
+  useEffect(() => {
+    setHasLoaded(true);
+  }, []);
   return (
     <Container>
       <InnerContainer>
@@ -216,7 +222,9 @@ export const Footer: React.FC<Props> = () => {
             {/* @TODO PAW COUNTER */}
             {/* Paw Count  */}
           </PawCounter>
-          <KlaviyoContainer className='klaviyo-form-XLLbb3'></KlaviyoContainer>
+          <KlaviyoContainer
+            className={hasLoaded ? 'klaviyo-form-XLLbb3' : ''}
+          ></KlaviyoContainer>
           <LogoContainer>
             <Image
               src='/svg/PalmsAndPawsLogoMark.svg'

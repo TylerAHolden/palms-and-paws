@@ -4,6 +4,7 @@
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +40,7 @@
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -44,6 +49,7 @@
   font-weight: 600;
   font-style: italic;
   font-stretch: normal;
+  font-display: swap;
 }
 
 html {
@@ -79,6 +85,10 @@ button {
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 
 a,

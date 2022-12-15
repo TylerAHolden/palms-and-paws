@@ -1,7 +1,11 @@
+import { ValidationError, useForm } from '@formspree/react';
+import { useEffect, useState } from 'react';
+
 import { Button } from '../components/Buttons';
 import Layout from '../components/Layout';
 import { styled } from 'goober';
-import { useState } from 'react';
+
+declare var grecaptcha: any;
 
 const ContactSection = styled('section')`
   background: var(--green);
@@ -16,6 +20,13 @@ const ContactSectionInner = styled('div')`
   max-width: 1300px;
   * {
     color: white;
+  }
+  h3 {
+    padding-top: 70px;
+    text-align: center;
+  }
+  .error {
+    color: #932121;
   }
 `;
 
@@ -84,11 +95,13 @@ const ContactInputsContainer = styled('div')`
     color: var(--black);
     margin-top: 20px;
   }
-  p {
+  label {
     transition: opacity 100ms ease-out;
     font-size: 14px;
     margin-bottom: -25px;
     opacity: 0.5;
+    font-family: var(--font-family-sans-serif);
+    margin-top: 20px;
     &:hover {
       opacity: 1;
     }
@@ -128,6 +141,27 @@ export default function Services() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
+  const [state, handleSubmit] = useForm('mnqyaqqk');
+
+  console.log(state);
+
+  useEffect(() => {
+    grecaptcha.ready(function () {
+      if (!grecaptcha) return;
+      grecaptcha
+        ?.execute('6Lcnk4EjAAAAAH-qYiQMiHQJhsWy9NcdQ9nvyJ-Q', {
+          action: 'submit',
+        })
+        .then(function (token: string) {
+          console.info('got token: ' + token);
+          const input = document.getElementById('g-recaptcha-response');
+          if (input) {
+            input.setAttribute('value', token);
+          }
+        });
+    });
+  }, []);
+
   return (
     <Layout title='Contact' description={`${title} - ${subtitle}`}>
       <ContactSection>
@@ -139,49 +173,90 @@ export default function Services() {
               to your pet’s healthcare needs.
             </p>
           </ContactHeader>
-          <ContactForm>
-            <ContactCategoryContainer>
-              <p>What can we help you with?</p>
-              <HelpCategorySelectContainer>
-                {HELP_CATEGORIES.map((category) => {
-                  const selected = category === helpCategory;
-                  return (
-                    <CategoryItem
-                      type='button'
-                      className={selected ? 'selected' : ''}
-                      key={category}
-                      onClick={() => setHelpCategory(category)}
-                    >
-                      <p>{category}</p>
-                    </CategoryItem>
-                  );
-                })}
-              </HelpCategorySelectContainer>
-            </ContactCategoryContainer>
-            <ContactInputsContainer>
-              <p>Name</p>
-              <input
-                type='text'
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <p>Email Address</p>
-              <input
-                type='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <p>Message</p>
-              <textarea
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-              />
-              <Button type='button' onClick={console.log}>
-                SEND MESSAGE
-              </Button>
-            </ContactInputsContainer>
-          </ContactForm>
+          {state.succeeded ? (
+            <h3>Thanks for reaching out, we will be in touch soon.</h3>
+          ) : (
+            <ContactForm onSubmit={handleSubmit}>
+              <ContactCategoryContainer>
+                <p>What can we help you with?</p>
+                <HelpCategorySelectContainer>
+                  {HELP_CATEGORIES.map((category) => {
+                    const selected = category === helpCategory;
+                    return (
+                      <CategoryItem
+                        type='button'
+                        className={selected ? 'selected' : ''}
+                        key={category}
+                        onClick={() => setHelpCategory(category)}
+                      >
+                        <p>{category}</p>
+                      </CategoryItem>
+                    );
+                  })}
+                </HelpCategorySelectContainer>
+              </ContactCategoryContainer>
+              <ContactInputsContainer>
+                {state.errors
+                  ? state.errors.map((err, i) => (
+                      <p className='error' key={i}>
+                        {err.message}
+                      </p>
+                    ))
+                  : null}
+                <input
+                  type='hidden'
+                  id='g-recaptcha-response'
+                  name='g-recaptcha-response'
+                />
+                <label htmlFor='inquiry-type'>Inquiry Type</label>
+                <input
+                  id='inquiry-type'
+                  name='inquiry-type'
+                  type='text'
+                  value={helpCategory}
+                  readOnly
+                  disabled
+                />
+                <label htmlFor='name'>Name</label>
+                <input
+                  id='name'
+                  name='name'
+                  type='text'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <label htmlFor='email'>Email Address</label>
+                <input
+                  id='email'
+                  name='email'
+                  type='email'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <ValidationError
+                  prefix='Email'
+                  field='email'
+                  errors={state.errors}
+                />
+                <label htmlFor='message'>Message</label>
+                <textarea
+                  id='message'
+                  name='message'
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                />
+                <ValidationError
+                  prefix='Message'
+                  field='message'
+                  errors={state.errors}
+                />
+                <Button type='submit' disabled={state.submitting}>
+                  SEND MESSAGE
+                </Button>
+              </ContactInputsContainer>
+            </ContactForm>
+          )}
         </ContactSectionInner>
       </ContactSection>
     </Layout>

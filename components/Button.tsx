@@ -133,7 +133,6 @@ export const Button: React.FC<Props> = ({
             scroll={false}
             href={routerLink || href || '/'}
             passHref={Boolean(routerLink || href)}
-            legacyBehavior
           >
             {children}
           </Link>
@@ -142,7 +141,7 @@ export const Button: React.FC<Props> = ({
         <StyledButton
           type='button'
           disabled={disabled}
-          as={href || routerLink ? 'a' : 'button'}
+          as={href || routerLink ? 'div' : 'button'}
           className={
             buttonStyle +
             ' ' +
