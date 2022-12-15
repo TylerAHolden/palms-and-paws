@@ -29,7 +29,7 @@ const MenuButton = styled('button')`
 `;
 
 export const MenuToggle = ({ toggle }: { toggle: () => void }) => (
-  <MenuButton onClick={toggle}>
+  <MenuButton onClick={toggle} aria-label='Menu'>
     <svg width='26' height='26' viewBox='0 0 23 23'>
       <Path
         variants={{

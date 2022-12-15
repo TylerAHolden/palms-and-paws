@@ -43,7 +43,7 @@ const CopyrightFlexContainer = styled('div')`
     flex-direction: column;
   }
   p {
-    opacity: 0.5;
+    opacity: 0.55;
     font-size: 14px;
     margin: 0;
   }
@@ -192,17 +192,21 @@ const AddressAndContact = styled('div')`
 `;
 
 const ListTitle = styled('p')`
-  margin: 1px 0;
+  margin: 4px 0;
 `;
 
 const ListItem = styled('p')`
-  margin: 1px 0;
+  margin: 0;
+  a {
+    padding: 4px 0;
+    display: block;
+  }
   a,
   span {
     text-decoration: none;
-    opacity: 0.5;
+    opacity: 0.55;
     &:hover {
-      opacity: 0.6;
+      opacity: 0.65;
       text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     }
   }

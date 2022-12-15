@@ -76,6 +76,7 @@ const MarqueeContent = styled('div')`
   white-space: nowrap;
   overflow: hidden;
   animation: slide 40s linear infinite;
+  will-change: transform;
 `;
 
 const MarqueeContentWrapper = styled('div')`
