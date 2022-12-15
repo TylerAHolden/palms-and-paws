@@ -65,7 +65,10 @@ const subtitle =
 export default function Home() {
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   return (
-    <Layout title='Home' description={`${title} - ${subtitle}`}>
+    <Layout
+      title='Palms & Paws Veterinary Clinic'
+      description={`${title} - ${subtitle}`}
+    >
       <HeroContainer>
         <HeroImageContainer
           ar='1423 / 1185'

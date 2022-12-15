@@ -51,7 +51,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           site_name: 'Palms & Paws',
           images: [
             {
-              url: 'https://www.palmspawsvet.com/PalsmandPawsOGImage.png',
+              url: 'https://www.palmspawsvet.com/PalmsandPawsOGImage.png',
               width: 1056,
               height: 611,
               alt: 'Palms & Paws Website Preview',
