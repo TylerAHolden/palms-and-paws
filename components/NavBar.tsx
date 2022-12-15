@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
 
+import { AiTwotoneHome } from 'react-icons/ai';
+import { BsFillPeopleFill } from 'react-icons/bs';
+import { FaHospital } from 'react-icons/fa';
 import Image from 'next/image';
+import { MdBiotech } from 'react-icons/md';
+import { MdMedicalServices } from 'react-icons/md';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
 import NoScrollLink from './NoScrollLink';
@@ -89,14 +94,27 @@ const NavbarLinksContainer = styled('div')`
 
 const NavbarLink = styled('div')`
   a {
+    svg {
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.1s ease-in-out;
+      width: 18px;
+      margin-right: -4px;
+      margin-top: -2px;
+    }
+    p {
+      transition: all 0.1s ease-in-out;
+      font-size: 16px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 16px;
     padding: 10px 25px;
     color: var(--black);
     opacity: 0.7;
     transition: all 100ms ease-in-out;
     text-decoration: none;
-    border-top: 0.5px solid rgba(210, 210, 210, 0);
-    border-bottom: 0.5px solid rgba(210, 210, 210, 0);
     @media (max-width: 1300px) {
       padding: 10px 20px;
       font-size: 15px;
@@ -107,10 +125,15 @@ const NavbarLink = styled('div')`
       font-size: 14px;
     }
     &:hover {
-      border-bottom: 0.5px solid #000000;
-      border-top: 0.5px solid #000000;
       color: var(--black);
       opacity: 1;
+      p {
+        transform: translateX(10px);
+      }
+      svg {
+        opacity: 1;
+        transform: translateX(0px);
+      }
     }
   }
 `;
@@ -191,17 +214,20 @@ export const NavBar: React.FC<Props> = () => {
           <NavbarLinksContainer className='left'>
             <NavbarLink>
               <NoScrollLink href='/' passHref>
-                Home
+                <AiTwotoneHome />
+                <p>Home</p>
               </NoScrollLink>
             </NavbarLink>
             <NavbarLink>
               <NoScrollLink href='/culture' passHref>
-                Culture
+                <MdBiotech />
+                <p>Culture</p>
               </NoScrollLink>
             </NavbarLink>
             <NavbarLink>
               <NoScrollLink href='/services' passHref>
-                Services
+                <MdMedicalServices />
+                <p>Services</p>
               </NoScrollLink>
             </NavbarLink>
           </NavbarLinksContainer>
@@ -217,13 +243,15 @@ export const NavBar: React.FC<Props> = () => {
           <NavbarLinksContainer className='right'>
             <NavbarLink>
               <NoScrollLink href='/hospital' passHref>
-                Hospital
+                <FaHospital />
+                <p>Hospital</p>
               </NoScrollLink>
             </NavbarLink>
 
             <NavbarLink>
               <NoScrollLink href='/our-staff' passHref>
-                Our Staff
+                <BsFillPeopleFill />
+                <p>Our Staff</p>
               </NoScrollLink>
             </NavbarLink>
 
