@@ -22,7 +22,7 @@ export const HeroImageContainer = styled('div')<{ ar: string }>`
   background: var(--light-grey);
   aspect-ratio: ${(props) => props.ar};
   img {
-    opacity: 0;
+    opacity: 0.1;
     transition: opacity 500ms ease-out;
   }
   &.loaded {
