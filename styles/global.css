@@ -77,6 +77,10 @@ body {
   --page-side-padding: 50px;
 }
 
+.grecaptcha-badge {
+  bottom: -200px !important;
+}
+
 button {
   outline: none;
   border: none;
