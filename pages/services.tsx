@@ -4,11 +4,12 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
-import { Button } from '../components/Buttons';
+import { Button } from '../components/Button';
 import { FAQs } from '../components/FAQs';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 import { Marquee } from '../components/Marquee';
+import { PET_PORTAL_LINK } from '../CONSTANTS';
 import { ServicesSlider } from '../components/ServicesSlider';
 import { useState } from 'react';
 
@@ -48,7 +49,14 @@ export default function Services() {
             medical procedures that may be required from time to time, Palms &
             Paws expertly delivers a complete suite of medical care.
           </p>
-          <Button>Book Now</Button>
+          <Button
+            buttonStyle='grey'
+            href={PET_PORTAL_LINK}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Book Now
+          </Button>
         </HeroTextContainer>
       </HeroContainer>
       <ServicesSlider />

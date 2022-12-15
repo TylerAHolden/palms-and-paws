@@ -246,7 +246,7 @@ export const Footer: React.FC<Props> = () => {
             <FooterListContainer>
               <ListTitle>Contact Us</ListTitle>
               <ListItem>
-                <a href='tel:+19493945565'>(949) 394-5565</a>
+                <a href='tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
               </ListItem>
               <ListItem>
                 <a href='mailto:hello@palmsandpawsvet.com'>

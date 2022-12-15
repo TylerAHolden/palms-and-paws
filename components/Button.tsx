@@ -88,14 +88,25 @@ const StyledButton = styled('a')<any>`
     margin-top: -1px;
   }
 
+  &:hover {
+    .external-link {
+      transform: scale(1.3);
+    }
+  }
+
+  &.grey {
+    background: var(--light-grey);
+    color: var(--black);
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   &.green {
     background: var(--green);
     color: white;
     &:hover {
       opacity: 0.8;
-      .external-link {
-        transform: scale(1.3);
-      }
     }
   }
 `;
