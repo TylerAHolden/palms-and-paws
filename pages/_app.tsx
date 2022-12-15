@@ -46,9 +46,17 @@ export default function App({ Component, pageProps, router }: AppProps) {
           type: 'website',
           locale: 'en_IE',
           url,
-          description: 'Palms & Paws',
+          description:
+            'Empowering People, Advancing Pets. Welcome to Palms & Paws, a new approach to animal care dedicated to delivering kind and compassionate services in a calm, friendly, professional environment. By innovating new approaches to improving the lives of pets while supporting, educating and empowering pet lovers, we ensure that we always deliver on our promise of Empowering People, Advancing Pets.',
           site_name: 'Palms & Paws',
-          images: [],
+          images: [
+            {
+              url: 'https://www.palmspawsvet.com/PalsmandPawsOGImage.png',
+              width: 1056,
+              height: 611,
+              alt: 'Palms & Paws Website Preview',
+            },
+          ],
         }}
         canonical={url}
       />
