@@ -44,14 +44,16 @@ export default function Culture() {
             love them.
           </h1>
         </HeroTextContainer>
-        <HeroImageContainer className={imageIsLoaded ? 'loaded' : ''}>
+        <HeroImageContainer
+          ar='1401 / 1185'
+          className={imageIsLoaded ? 'loaded' : ''}
+        >
           <Image
             priority
             src='/images/culture-header-image.jpg'
             alt='Palms and Paws Header Image'
-            layout='responsive'
-            width={1401}
-            height={1185}
+            fill
+            sizes='(max-width: 900px) 50vw, 25vw'
             onLoad={(event) => {
               const target = event.target as any;
 

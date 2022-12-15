@@ -132,13 +132,12 @@ export default function Hospital() {
       </HospitalHeroImageContainer>
 
       <HeroContainer>
-        <StyledHeroImageContainer className={'loaded'}>
+        <StyledHeroImageContainer ar='1250 / 1088' className={'loaded'}>
           <Image
             src='/images/hospital-shelter-image.jpg'
             alt='santa monica animal shelter'
-            layout='responsive'
-            width={1250}
-            height={1088}
+            fill
+            sizes='(max-width: 900px) 50vw, 25vw'
           />
         </StyledHeroImageContainer>
         <StyledHeroTextContainer>

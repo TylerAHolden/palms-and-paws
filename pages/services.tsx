@@ -22,14 +22,16 @@ export default function Services() {
   return (
     <Layout title='Services' description={`${title} - ${subtitle}`}>
       <HeroContainer>
-        <HeroImageContainer className={imageIsLoaded ? 'loaded' : ''}>
+        <HeroImageContainer
+          ar='1401 / 1185'
+          className={imageIsLoaded ? 'loaded' : ''}
+        >
           <Image
             priority
             src='/images/services-header.jpg'
             alt='veterinarian and doctor treating dog'
-            layout='responsive'
-            width={1401}
-            height={1185}
+            fill
+            sizes='(max-width: 900px) 50vw, 25vw'
             onLoad={(event) => {
               const target = event.target as any;
 

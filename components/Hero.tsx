@@ -13,13 +13,14 @@ export const HeroContainer = styled('div')`
   }
 `;
 
-export const HeroImageContainer = styled('div')`
+export const HeroImageContainer = styled('div')<{ ar: string }>`
   width: 50%;
   flex-shrink: 0;
   overflow: hidden;
   display: flex;
   position: relative;
   background: var(--light-grey);
+  aspect-ratio: ${(props) => props.ar};
   img {
     opacity: 0;
     transition: opacity 500ms ease-out;

@@ -23,14 +23,16 @@ export default function Home() {
   return (
     <Layout title='Home' description={`${title} - ${subtitle}`}>
       <HeroContainer>
-        <HeroImageContainer className={imageIsLoaded ? 'loaded' : ''}>
+        <HeroImageContainer
+          ar='1423 / 1185'
+          className={imageIsLoaded ? 'loaded' : ''}
+        >
           <Image
             priority
             src={headerImg}
             alt='Palms and Paws Header Image'
-            layout='responsive'
-            width={1423}
-            height={1185}
+            fill
+            sizes='(max-width: 900px) 50vw, 25vw'
             onLoad={(event) => {
               const target = event.target as any;
 

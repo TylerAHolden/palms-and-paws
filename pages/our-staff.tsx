@@ -20,14 +20,16 @@ export default function Staff() {
   return (
     <Layout title='Our Staff' description={`${title} - ${subtitle}`}>
       <HeroContainer>
-        <HeroImageContainer className={imageIsLoaded ? 'loaded' : ''}>
+        <HeroImageContainer
+          ar='1401 / 1185'
+          className={imageIsLoaded ? 'loaded' : ''}
+        >
           <Image
             priority
             src='/images/staff-header.jpg'
             alt='Veterinary doctors diagnosing at cat'
-            layout='responsive'
-            width={1401}
-            height={1185}
+            sizes='(max-width: 900px) 50vw, 25vw'
+            fill
             onLoad={(event) => {
               const target = event.target as any;
 
