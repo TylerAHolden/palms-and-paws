@@ -4,6 +4,7 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
+import { Animation } from '../components/HomePageAnimations';
 import { CultureBeyondSection } from '../components/CultureBeyondSection';
 import { CultureValuesSlider } from '../components/CultureValuesSlider';
 import Image from 'next/image';
@@ -16,7 +17,7 @@ const CultureTextContainer = styled('div')`
   width: 100%;
   padding-left: var(--page-side-padding);
   padding-right: var(--page-side-padding);
-  margin-top: -30px;
+  margin-top: -20px;
 `;
 
 const CultureTextContainerInner = styled('div')`
@@ -24,6 +25,45 @@ const CultureTextContainerInner = styled('div')`
   max-width: 1300px;
   margin: auto;
   padding-bottom: calc(var(--page-side-padding) * 2);
+`;
+
+const CulturePageAnimationsContainer = styled('div')`
+  > div {
+    width: 300px;
+    &:first-child {
+      width: max(30vw, 400px);
+      margin-bottom: -3vw;
+    }
+    &:last-child {
+      transform: scale(-1, 1);
+    }
+  }
+
+  margin-top: -25vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 24%;
+
+  @media (max-width: 1200px) {
+    padding-left: 10%;
+    padding-right: 13%;
+  }
+
+  @media (max-width: 900px) {
+    margin-top: -20vw;
+    padding-left: 20px;
+    padding-right: 20px;
+    > div {
+      width: 250px;
+      &:first-child {
+        width: max(30vw, 300px);
+        margin-bottom: -3vw;
+      }
+    }
+  }
 `;
 
 const title = 'Taking care of pets and the people who love them.';
@@ -65,6 +105,10 @@ export default function Culture() {
           />
         </HeroImageContainer>
       </HeroContainer>
+      <CulturePageAnimationsContainer>
+        <Animation path='/animations/cat.json' />
+        <Animation path='/animations/dogShake.json' />
+      </CulturePageAnimationsContainer>
       <CultureTextContainer>
         <CultureTextContainerInner>
           <p>

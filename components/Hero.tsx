@@ -70,6 +70,9 @@ export const HeroTextContainer = styled('div')`
       padding-right: 40px;
       padding-left: 80px;
     }
+    @media (max-width: 900px) {
+      align-items: flex-start;
+    }
   }
   &:not(:first-child) {
     @media (min-width: 901px) {
