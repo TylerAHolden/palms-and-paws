@@ -4,6 +4,7 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
+import { Animation } from '../components/HomePageAnimations';
 import { FAQs } from '../components/FAQs';
 import { HomepageTiles } from '../components/HomepageTiles';
 import Image from 'next/image';
@@ -12,7 +13,50 @@ import Layout from '../components/Layout';
 import { Marquee } from '../components/Marquee';
 import { MeetStaffSlider } from '../components/MeetStaffSlider';
 import headerImg from '../public/images/header-image.jpg';
+import { styled } from 'goober';
 import { useState } from 'react';
+
+const HomePageAnimationsContainer = styled('div')`
+  > div {
+    width: 100px;
+    &:first-child {
+      margin-bottom: -10px;
+    }
+    &:last-child {
+      transform: scale(-1, 1);
+    }
+  }
+
+  margin-top: -30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding-left: 20%;
+  padding-right: 30%;
+  margin-bottom: -20px;
+
+  @media (max-width: 1200px) {
+    padding-left: 12%;
+    padding-right: 23%;
+  }
+  @media (max-width: 1000px) {
+    padding-left: 10%;
+    padding-right: 20%;
+  }
+  @media (max-width: 900px) {
+    padding-left: 10%;
+    padding-right: 50%;
+  }
+  @media (max-width: 700px) {
+    padding-left: 20px;
+    padding-right: 40%;
+  }
+  @media (max-width: 500px) {
+    padding-left: 0px;
+    padding-right: 30%;
+  }
+`;
 
 const title = 'Empowering People, Advancing Pets.';
 const subtitle =
@@ -44,6 +88,10 @@ export default function Home() {
           />
         </HeroImageContainer>
         <HeroTextContainer>
+          <HomePageAnimationsContainer>
+            <Animation path='/animations/cat.json' />
+            <Animation path='/animations/dogShake.json' />
+          </HomePageAnimationsContainer>
           <h1>
             <i>Empowering</i> People,
             <br />
