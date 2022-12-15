@@ -2,6 +2,7 @@ import '../styles/global.css';
 
 import { createElement, useEffect } from 'react';
 
+import { Analytics } from '@vercel/analytics/react';
 import { AnimatePresence } from 'framer-motion';
 import type { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
@@ -60,6 +61,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Component {...pageProps} canonical={url} key={url} />
       </AnimatePresence>
       <Footer />
+      <Analytics />
     </>
   );
 }

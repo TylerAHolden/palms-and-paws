@@ -5,6 +5,7 @@ import {
 } from '../components/Hero';
 
 import { FAQs } from '../components/FAQs';
+import { HomepageTiles } from '../components/HomepageTiles';
 import Image from 'next/image';
 import { JoinTeamSection } from '../components/JoinTeamSection';
 import Layout from '../components/Layout';
@@ -58,6 +59,7 @@ export default function Home() {
           </p>
         </HeroTextContainer>
       </HeroContainer>
+      <HomepageTiles />
       <MeetStaffSlider />
       <FAQs />
       <Marquee>

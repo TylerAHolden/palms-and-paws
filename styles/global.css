@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: 'Maison Neue';
+  src: url('/fonts/MaisonNeueTRIAL-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
   font-family: 'Maison Neue Mono';
   src: url('/fonts/MaisonNeueMono-Italic.otf') format('opentype');
   font-weight: 400;
