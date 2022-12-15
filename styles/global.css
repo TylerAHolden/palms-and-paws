@@ -15,24 +15,6 @@
   font-stretch: normal;
   font-display: swap;
 }
-/* 
-@font-face {
-  font-family: 'Maison Neue Mono';
-  src: url('/fonts/MaisonNeueMono-Italic.otf') format('opentype');
-  font-weight: 400;
-  font-style: italic;
-  font-stretch: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Maison Neue Mono';
-  src: url('/fonts/MaisonNeueMono-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-stretch: normal;
-  font-display: swap;
-} */
 
 @font-face {
   font-family: 'Argent CF';
@@ -72,7 +54,7 @@ body {
   --blue: #469ae8;
   --yellow: #ffc04d;
   --font-family-sans-serif: 'Maison Neue', sans-serif;
-  --font-family-serif: 'Argent CF', serif;
+  --font-family-serif: 'Argent CF', 'Georgia', serif;
   --border-radius: 22px;
   --page-side-padding: 50px;
 }
@@ -210,4 +192,53 @@ h4 {
   p {
     font-size: 15px;
   }
+}
+
+.mobile-menu {
+  pointer-events: none;
+  margin: 0;
+  padding: var(--page-side-padding);
+  position: fixed;
+  top: 0;
+  z-index: 998;
+  left: 0;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.mobile-menu.open {
+  pointer-events: auto;
+}
+
+.mobile-menu li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 16px;
+  padding: 12px 25px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+}
+
+li.menu-logo {
+  margin-left: 13px;
+  margin-bottom: 20px;
+  width: 202px;
+  position: relative;
+  aspect-ratio: 282 / 40;
 }

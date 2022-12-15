@@ -139,7 +139,7 @@ export const PetPortalButton = styled('a')`
   padding: 8px 26px;
   outline: none;
   cursor: pointer;
-  transition: all 100ms ease-in-out;
+  transition: background 100ms ease-in-out;
   text-decoration: none;
   p {
     font-weight: 600;
