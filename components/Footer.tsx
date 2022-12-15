@@ -178,10 +178,15 @@ const ListTitle = styled('p')`
 `;
 
 const ListItem = styled('p')`
-  opacity: 0.5;
   margin: 1px 0;
-  a {
+  a,
+  span {
     text-decoration: none;
+    opacity: 0.5;
+    &:hover {
+      opacity: 0.6;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
   }
 `;
 
@@ -223,8 +228,12 @@ export const Footer: React.FC<Props> = () => {
           <AddressAndContact>
             <FooterListContainer>
               <ListTitle>Our Address</ListTitle>
-              <ListItem>1655 9th Street</ListItem>
-              <ListItem>Santa Monica, CA 90404</ListItem>
+              <ListItem>
+                <span>1655 9th Street</span>
+              </ListItem>
+              <ListItem>
+                <span>Santa Monica, CA 90404</span>
+              </ListItem>
             </FooterListContainer>
             <FooterListContainer>
               <ListTitle>Contact Us</ListTitle>
