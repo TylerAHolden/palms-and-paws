@@ -11,16 +11,9 @@ import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
 import NoScrollLink from './NoScrollLink';
 import { PET_PORTAL_LINK } from '../CONSTANTS';
-import { createGlobalStyles } from 'goober/global';
 import { styled } from 'goober';
 
 type Props = {};
-
-const ScrollBlocker = createGlobalStyles`
-  body, html {
-  overflow: hidden;
-}
-`;
 
 const NavBarContainer = styled('div')`
   width: 100%;
@@ -199,67 +192,64 @@ export const NavBar: React.FC<Props> = () => {
   const containerRef = useRef(null);
 
   return (
-    <>
-      {isOpen && <ScrollBlocker />}
-      <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
-        <NavbarInnerContainer>
-          <MobileSpacer />
-          <NavbarLinksContainer className='left'>
-            <NavbarLink>
-              <NoScrollLink href='/' passHref>
-                <AiTwotoneHome />
-                <p>Home</p>
-              </NoScrollLink>
-            </NavbarLink>
-            <NavbarLink>
-              <NoScrollLink href='/culture' passHref>
-                <MdBiotech />
-                <p>Culture</p>
-              </NoScrollLink>
-            </NavbarLink>
-            <NavbarLink>
-              <NoScrollLink href='/services' passHref>
-                <MdMedicalServices />
-                <p>Services</p>
-              </NoScrollLink>
-            </NavbarLink>
-          </NavbarLinksContainer>
-          <Logo />
-          <NavbarLinksContainer className='right'>
-            <NavbarLink>
-              <NoScrollLink href='/hospital' passHref>
-                <FaHospital />
-                <p>Hospital</p>
-              </NoScrollLink>
-            </NavbarLink>
+    <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
+      <NavbarInnerContainer>
+        <MobileSpacer />
+        <NavbarLinksContainer className='left'>
+          <NavbarLink>
+            <NoScrollLink href='/' passHref>
+              <AiTwotoneHome />
+              <p>Home</p>
+            </NoScrollLink>
+          </NavbarLink>
+          <NavbarLink>
+            <NoScrollLink href='/culture' passHref>
+              <MdBiotech />
+              <p>Culture</p>
+            </NoScrollLink>
+          </NavbarLink>
+          <NavbarLink>
+            <NoScrollLink href='/services' passHref>
+              <MdMedicalServices />
+              <p>Services</p>
+            </NoScrollLink>
+          </NavbarLink>
+        </NavbarLinksContainer>
+        <Logo />
+        <NavbarLinksContainer className='right'>
+          <NavbarLink>
+            <NoScrollLink href='/hospital' passHref>
+              <FaHospital />
+              <p>Hospital</p>
+            </NoScrollLink>
+          </NavbarLink>
 
-            <NavbarLink>
-              <NoScrollLink href='/our-staff' passHref>
-                <BsFillPeopleFill />
-                <p>Our Staff</p>
-              </NoScrollLink>
-            </NavbarLink>
+          <NavbarLink>
+            <NoScrollLink href='/our-staff' passHref>
+              <BsFillPeopleFill />
+              <p>Our Staff</p>
+            </NoScrollLink>
+          </NavbarLink>
 
-            <PetPortalButton
-              href={PET_PORTAL_LINK}
-              target='_blank'
-              rel='noreferrer noopener'
-            >
-              <p>PET PORTAL</p>
-            </PetPortalButton>
-          </NavbarLinksContainer>
-          <MobileSpacer>
-            <motion.nav
-              initial={false}
-              animate={isOpen ? 'open' : 'closed'}
-              ref={containerRef}
-            >
-              <MobileMenu closeMenu={toggleOpen} isOpen={isOpen} />
-              <MenuToggle toggle={() => toggleOpen()} />
-            </motion.nav>
-          </MobileSpacer>
-        </NavbarInnerContainer>
-      </NavBarContainer>
-    </>
+          <PetPortalButton
+            href={PET_PORTAL_LINK}
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            <p>PET PORTAL</p>
+          </PetPortalButton>
+        </NavbarLinksContainer>
+        <MobileSpacer>
+          <motion.nav
+            initial={false}
+            animate={isOpen ? 'open' : 'closed'}
+            ref={containerRef}
+          >
+            <MobileMenu closeMenu={toggleOpen} isOpen={isOpen} />
+            <MenuToggle toggle={() => toggleOpen()} />
+          </motion.nav>
+        </MobileSpacer>
+      </NavbarInnerContainer>
+    </NavBarContainer>
   );
 };
