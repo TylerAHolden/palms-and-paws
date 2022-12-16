@@ -30,6 +30,7 @@ export const HeroImageContainer = styled('div')<{ ar: string }>`
       opacity: 1;
     }
   }
+  border-radius: var(--border-radius);
 
   &:first-child {
     @media (min-width: 901px) {

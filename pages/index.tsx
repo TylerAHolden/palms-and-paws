@@ -19,6 +19,7 @@ import { useState } from 'react';
 const HomePageAnimationsContainer = styled('div')`
   > div {
     width: 100px;
+    min-height: 100px;
     &:first-child {
       margin-bottom: -10px;
     }
