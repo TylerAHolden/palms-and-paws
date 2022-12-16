@@ -226,13 +226,18 @@ h4 {
   padding: 12px 25px;
 }
 
-.background {
+.mobile-menu-bg {
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   background: white;
+}
+
+.mobile-menu-bg.open {
+  pointer-events: auto;
 }
 
 li.menu-logo {

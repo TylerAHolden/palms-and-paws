@@ -77,7 +77,10 @@ export const MobileMenu = ({
   closeMenu: () => void;
 }) => (
   <>
-    <motion.div className='background' variants={sidebar} />
+    <motion.div
+      className={`mobile-menu-bg ${isOpen ? 'open' : ''}`}
+      variants={sidebar}
+    />
 
     <motion.ul
       className={`mobile-menu ${isOpen ? 'open' : ''}`}
