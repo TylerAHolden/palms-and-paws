@@ -288,7 +288,7 @@ export const MeetStaffSlider: React.FC<Props> = () => {
   );
 };
 
-const swipeConfidenceThreshold = 100;
+const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
