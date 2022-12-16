@@ -35,10 +35,6 @@ const variants = {
   enter: (direction: number) => ({
     x: direction > 0 ? -directionOffset : directionOffset,
     opacity: 0,
-    staggerDirection: -1,
-    transition: {
-      staggerChildren: 0.3,
-    },
   }),
   center: {
     zIndex: 1,
@@ -49,10 +45,6 @@ const variants = {
     zIndex: 0,
     x: direction < 0 ? -directionOffset : directionOffset,
     opacity: 0,
-    staggerDirection: -1,
-    transition: {
-      staggerChildren: 0.3,
-    },
   }),
 };
 
@@ -173,6 +165,11 @@ const MeetStaffLink = styled('div')`
   }
 `;
 
+const swipeConfidenceThreshold = 10000;
+const swipePower = (offset: number, velocity: number) => {
+  return Math.abs(offset) * velocity;
+};
+
 const staffMembers = [
   {
     name: 'Kevin McEvilly, DVM',
@@ -232,8 +229,6 @@ export const MeetStaffSlider: React.FC<Props> = () => {
               type: 'spring',
               stiffness: 200,
               damping: 30,
-              duration: 0.17,
-              staggerChildren: 0.3,
             },
             opacity: { duration: 0.2 },
           }}
@@ -242,10 +237,10 @@ export const MeetStaffSlider: React.FC<Props> = () => {
           dragElastic={1}
           onDragEnd={(_e: any, { offset, velocity }: any) => {
             const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < swipeConfidenceThreshold) {
-              paginate(-1);
-            } else if (swipe > -swipeConfidenceThreshold) {
+            if (swipe < -swipeConfidenceThreshold) {
               paginate(1);
+            } else if (swipe > swipeConfidenceThreshold) {
+              paginate(-1);
             }
           }}
         >
@@ -286,9 +281,4 @@ export const MeetStaffSlider: React.FC<Props> = () => {
       </AnimatePresence>
     </Container>
   );
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
 };
