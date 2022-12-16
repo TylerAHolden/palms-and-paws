@@ -89,7 +89,7 @@ export const HomepageTiles: React.FC<Props> = () => {
             result? The best, and most compassionate veterinary care possible.
           </p>
           <ButtonContainer>
-            <Button buttonStyle='green' routerLink='/staff'>
+            <Button buttonStyle='green' routerLink='/our-staff'>
               MEET OUR STAFF
             </Button>
           </ButtonContainer>
