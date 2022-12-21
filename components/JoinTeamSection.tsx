@@ -56,7 +56,7 @@ const AnimationContainer = styled('div')`
 
 export const JoinTeamSection: React.FC<Props> = () => {
   const mailToLink = () => {
-    window.open(String('mailto:recruitment@palmsandpaws.com'));
+    window.open(String('mailto:recruitment@palmspawsvet.com'));
   };
 
   return (

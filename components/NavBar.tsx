@@ -80,6 +80,16 @@ const NavbarLinksContainer = styled('div')`
 
 const NavbarLink = styled('div')`
   a {
+    /* &::after {
+      position: absolute;
+      content: '';
+      width: 72%;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.2;
+      bottom: 19px;
+      left: 20%;
+    } */
     svg {
       opacity: 0;
       transform: translateX(10px);
@@ -89,6 +99,7 @@ const NavbarLink = styled('div')`
       margin-top: -2px;
     }
     p {
+      white-space: nowrap;
       transition: all 0.1s ease-in-out;
       font-size: 16px;
     }
@@ -101,6 +112,7 @@ const NavbarLink = styled('div')`
     opacity: 0.7;
     transition: all 100ms ease-in-out;
     text-decoration: none;
+    position: relative;
     @media (max-width: 1300px) {
       padding: 10px 20px;
       font-size: 15px;
@@ -125,15 +137,18 @@ const NavbarLink = styled('div')`
 `;
 
 export const PetPortalButton = styled('a')`
-  background: var(--light-grey);
-  border: 0.5px solid var(--black);
+  background: var(--blue);
   margin-left: 20px;
   border-radius: 50px;
   padding: 8px 26px;
   outline: none;
   cursor: pointer;
-  transition: background 100ms ease-in-out;
+  transition: box-shadow 100ms ease-in-out, all 0.1s ease;
   text-decoration: none;
+  --shadow-color: 209deg 66% 59%;
+  box-shadow: 0px 0.7px 0.9px hsl(209deg 26% 59% / 0.12),
+    0.1px 3.5px 4.6px -0.6px hsl(209deg 16% 59% / 0.21),
+    0.3px 5.3px 14.8px -1.2px hsl(var(--shadow-color) / 0.49);
   p {
     font-weight: 600;
     text-decoration: none;
@@ -142,6 +157,8 @@ export const PetPortalButton = styled('a')`
     text-transform: uppercase;
     letter-spacing: 0.07em;
     font-size: 15px;
+    white-space: nowrap;
+    color: white;
   }
   @media (max-width: 1300px) {
     margin-left: 15px;
@@ -157,10 +174,10 @@ export const PetPortalButton = styled('a')`
     }
   }
   &:hover {
-    background: var(--blue);
-    p {
-      color: white;
-    }
+    transform: scale(1.05);
+    box-shadow: 0px 0.7px 0.9px hsl(209deg 26% 59% / 0.32),
+      0.1px 3.5px 4.6px -0.6px hsl(209deg 16% 59% / 0.41),
+      0.3px 5.3px 14.8px -1.2px hsl(var(--shadow-color) / 0.79);
   }
 `;
 
@@ -171,6 +188,37 @@ const MobileSpacer = styled('div')`
     align-items: center;
     justify-content: flex-end;
     flex: 1;
+  }
+`;
+
+const PhoneNumberContainer = styled('div')`
+  z-index: 1;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 5px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  a {
+    white-space: nowrap;
+    margin: 0 10px;
+    opacity: 0.6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 600px) {
+    bottom: -25px;
+    flex-direction: column;
+    a {
+      margin: 4 10px;
+    }
   }
 `;
 
@@ -193,6 +241,10 @@ export const NavBar: React.FC<Props> = () => {
 
   return (
     <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
+      <PhoneNumberContainer>
+        <a href='tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
+        <a href='mailto:hello@palmsandpawsvet.com'>hello@palmsandpawsvet.com</a>
+      </PhoneNumberContainer>
       <NavbarInnerContainer>
         <MobileSpacer />
         <NavbarLinksContainer className='left'>
@@ -236,7 +288,7 @@ export const NavBar: React.FC<Props> = () => {
             target='_blank'
             rel='noreferrer noopener'
           >
-            <p>PET PORTAL</p>
+            <p>Book Appointment</p>
           </PetPortalButton>
         </NavbarLinksContainer>
         <MobileSpacer>

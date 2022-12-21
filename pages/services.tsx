@@ -47,9 +47,9 @@ export default function Services() {
 
           <p>
             Beginning with the preventative care that ensures your best friend
-            stays healthy for years and advancing to the highly technical
-            medical procedures that may be required from time to time, Palms &
-            Paws expertly delivers a complete suite of medical care.
+            stays healthy for years and advancing to more technical medical
+            diagnostics and procedures that may be required from time to time,
+            Palms & Paws expertly delivers a complete suite of medical care.
           </p>
           <Button
             buttonStyle='grey'

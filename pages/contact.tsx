@@ -147,6 +147,7 @@ export default function Services() {
   console.log(state);
 
   useEffect(() => {
+    if (!grecaptcha) return;
     grecaptcha.ready(function () {
       if (!grecaptcha) return;
       grecaptcha

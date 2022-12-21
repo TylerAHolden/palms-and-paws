@@ -73,10 +73,10 @@ const ITEMS = [
     </p>
     <ul>
       <li>Annual Wellness Visits</li>
-      <li>Vaccines & Boosters</li>
+      <li>Vaccines and Boosters</li>
       <li>Prevention of Parasites</li>
       <li>Dental Evaluations</li>
-      <li>Routine Bloodwork</li>
+      <li>Routine Blood Work and Diagnostics</li>
     </ul>
   </>,
   <>
@@ -84,10 +84,10 @@ const ITEMS = [
     <p>We have you covered for all your everyday pet care needs:</p>
     <ul>
       <li>Gastrointestinal issues</li>
-      <li>Skin & Ear Infections </li>
+      <li>Skin and Ear Infections</li>
       <li>Allergies </li>
       <li>Limping </li>
-      <li>Coughing & Sneezing </li>
+      <li>Coughing and Sneezing </li>
       <li>Lethargy </li>
       <li>Eye Issues</li>
     </ul>
@@ -136,31 +136,39 @@ const ITEMS = [
     </ul>
   </>,
   <>
-    <h4>Surgery & Dentistry</h4>
+    <h4>Surgery</h4>
     <p>
-      The Palms & Paws Team is equipped to handle routine surgeries as well as
-      more complex procedures, including:
+      We are equipped to handle routine surgeries as well as more complex
+      procedures, including:
     </p>
     <ul>
       <li>Spays & Neuters</li>
-      <li>Full Mouth X-rays</li>
-      <li>Dental Cleaning, Polishing, & Extractions</li>
       <li>Mass Removals</li>
       <li>Foreign Body Removal</li>
+      <li>Wound Exploration and Reconstruction</li>
+      <li>Laceration Repair</li>
+    </ul>
+  </>,
+  <>
+    <h4>Dentistry</h4>
+    <ul>
+      <li>Routine Dental Cleaning</li>
+      <li>Full Mouth X-rays</li>
+      <li>Oral Mass Biopsy/Excision</li>
+      <li>Tooth Extraction</li>
     </ul>
   </>,
   <>
     <h4>Specialist Support</h4>
     <p>
-      We partner with local highly-trained and thoroughly-vetted boarded
-      specialists in cardiology, internal medicine, and dentistry who come to
-      Palms & Paws to provide boutique specialty services in the comfort of a
-      familiar environment
+      We bring specialists in cardiology, internal medicine, and dentistry to
+      Palms & Paws so that we provide specialty services in the comfort of a
+      familiar environment.
     </p>
     <ul>
       <li>
-        Internal Medicine Specialists can perform abdominal ultrasounds and
-        provide consultation on complex cases
+        Internal Medicine Specialists perform abdominal ultrasounds and provide
+        consultation on complex cases
       </li>
       <li>
         Veterinary Cardiologists can perform echocardiogram and review chest

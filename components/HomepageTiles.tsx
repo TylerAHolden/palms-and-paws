@@ -64,7 +64,9 @@ export const HomepageTiles: React.FC<Props> = () => {
           <IconContainer>
             <IoPawOutline />
           </IconContainer>
-          <h4>A complete array of medical services for your pet</h4>
+          <h4>
+            A complete array of medical <i>services</i> for your pet
+          </h4>
           <p>
             Wellness visits, primary care, urgent care, boutique specialty
             services and more! We are here to offer the highest level of
@@ -78,10 +80,31 @@ export const HomepageTiles: React.FC<Props> = () => {
         </TileContainer>
         <TileContainer>
           <IconContainer>
+            <CiHospital1 />
+          </IconContainer>
+
+          <h4>
+            State of the art <i>hospital</i> facilities
+          </h4>
+          <p>
+            Between our in-house lab and diagnostic equipment as well as out
+            outside laboratory resource, we offer a full range of diagnostic
+            capabilities.
+          </p>
+          <ButtonContainer>
+            <Button buttonStyle='green' routerLink='/hospital'>
+              TAKE A TOUR
+            </Button>
+          </ButtonContainer>
+        </TileContainer>
+        <TileContainer>
+          <IconContainer>
             <IoPeopleOutline />
           </IconContainer>
 
-          <h4>A caring, compassionate, and highly trained staff</h4>
+          <h4>
+            A caring, compassionate, and highly trained <i>staff</i>
+          </h4>
           <p>
             We’re here because we love people and animals! Since growth and
             leadership development are core tenets in our approach, it allows us
@@ -91,23 +114,6 @@ export const HomepageTiles: React.FC<Props> = () => {
           <ButtonContainer>
             <Button buttonStyle='green' routerLink='/our-staff'>
               MEET OUR STAFF
-            </Button>
-          </ButtonContainer>
-        </TileContainer>
-        <TileContainer>
-          <IconContainer>
-            <CiHospital1 />
-          </IconContainer>
-
-          <h4>State of the art hospital facilities</h4>
-          <p>
-            Between our in-house lab and diagnostic equipment as well as out
-            outside laboratory resource, we offer a full range of diagnostic
-            capabilities.
-          </p>
-          <ButtonContainer>
-            <Button buttonStyle='green' routerLink='/hospital'>
-              TAKE A TOUR
             </Button>
           </ButtonContainer>
         </TileContainer>

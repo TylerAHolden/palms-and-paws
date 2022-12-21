@@ -14,34 +14,31 @@ const Slide = styled('div')`
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  width: 320px;
+  width: auto;
   background: var(--green);
   border-radius: var(--border-radius);\
   margin: 0 10px;
   padding: 40px 30px;
   height: 380px;
   &.embla__slide {
-    min-width: 320px;
+    min-width: auto;
   }
 
   @media (max-width: 900px) {
-    height: 320px;
-    width: 280px;
     &.embla__slide {
-      min-width: 280px;
     }
   }
   @media (max-width: 600px) {
   padding: 30px 20px;
-    height: 250px;
-    width: 220px;
+    
     &.embla__slide {
-      min-width: 220px;
     }
   }
   h4 {
+    white-space: nowrap;
     font-style: italic;
     padding-bottom: 20px;
+    min-width: 260px;
   }
   * {
     color: white;
@@ -49,6 +46,13 @@ const Slide = styled('div')`
 `;
 
 const ITEMS = [
+  <>
+    <h4>Others-oriented Leadership</h4>
+    <p>
+      We intentionally help others grow and succeed intellectually, emotionally,
+      personally, and professionally.
+    </p>
+  </>,
   <>
     <h4>Results with Compassion</h4>
     <p>

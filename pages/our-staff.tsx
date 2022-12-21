@@ -41,7 +41,11 @@ export default function Staff() {
           />
         </HeroImageContainer>
         <HeroTextContainer>
-          <h1>Meet the Team</h1>
+          <h1>
+            Taking care of pets.
+            <br />
+            And the people who love them.
+          </h1>
 
           <p>
             We are incredibly proud of the team we have assembled at Palms &
@@ -50,6 +54,7 @@ export default function Staff() {
             medical attention, while ensuring that our patients and their people
             feel safe and assured about their treatments.
           </p>
+          <p>Our team includes…</p>
         </HeroTextContainer>
       </HeroContainer>
       <MeetStaffSlider />

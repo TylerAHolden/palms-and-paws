@@ -126,7 +126,7 @@ export const MobileMenu = ({
           target='_blank'
           rel='noreferrer noopener'
         >
-          <p>PET PORTAL</p>
+          <p>Book Appointment</p>
         </PetPortalButton>
       </motion.li>
     </motion.ul>

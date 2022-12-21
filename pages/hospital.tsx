@@ -111,21 +111,23 @@ export default function Hospital() {
             <p>
               Under one roof, we are now able to offer a comprehensive array of
               medical services for your pets, from regular primary care
-              check-ups and minor health issues to specialized surgical
-              procedures, including internal medicine, cardiology and veterinary
-              dentistry.{' '}
-              <strong>In a warm, caring and comfortable environment,</strong>{' '}
-              designed to maximize efficiency and minimize wait times and client
-              inconvenience.
+              check-ups and minor health issues to surgery, dentistry and more.
+              We also have specialist support, where we bring the internal
+              medicine, cardiology and veterinary dentistry specialists in
+              house. All of this and more is delivered in a warm, caring and
+              comfortable environment.
             </p>
             <p>The Palms & Paws primary care veterinary hospital offers:</p>
             <ul>
               <li>
                 A 5,600 sq. ft. facility with seven state of the art exam rooms
               </li>
-              <li>Four surgery centers</li>
-              <li>Isolation exam room for potentially infectious cases</li>
+              <li>Four procedure tables</li>
+              <li>A sterile operating room</li>
+              <li>Isolation exam room for potentially infectious patients</li>
               <li>A full-time staff of 20+ trained professionals</li>
+              <li>Urgent care appointments</li>
+              <li>Specialist support</li>
             </ul>
           </div>
         </HospitalInfoTextContainer>
@@ -144,8 +146,8 @@ export default function Hospital() {
           <h1>All animals need love.</h1>
 
           <p>
-            We are located across the street from the Santa Monica pet shelter,
-            allowing us to collaborate and ensure that{' '}
+            We are located across the street from the Santa Monica Animal
+            Shelter, allowing us to collaborate and ensure that{' '}
             <strong>every animal in our city gets the care it needs.</strong>
           </p>
         </StyledHeroTextContainer>

@@ -96,31 +96,40 @@ export default function Home() {
             <Animation path='/animations/cat.json' />
             <Animation path='/animations/dogShake.json' />
           </HomePageAnimationsContainer>
+          <p>
+            Welcome to Palms & Paws, delivering kind and compassionate
+            veterinary medical services in a calm, friendly, and professional
+            environment.
+          </p>
+          <p>
+            We improve the lives of pets by supporting, educating, and
+            empowering pet lovers. When we succeed, we ensure that we always
+            deliver on our promise of…
+          </p>
           <h1>
             <i>Empowering</i> People,
             <br />
             <i>Advancing</i> Pets.
           </h1>
           <p>
-            Welcome to Palms & Paws, a new approach to animal care dedicated to
-            delivering kind and compassionate services in a calm, friendly,
-            professional environment.
-          </p>
-          <p>
-            By innovating new approaches to improving the lives of pets while
-            supporting, educating and empowering pet lovers, we ensure that we
-            always deliver on our promise of Empowering People, Advancing Pets.
+            Mission Statement: We are a committed group of professionals,
+            dedicated to seeing pets thrive, and making pet-parents happy. By
+            empowering our staff to succeed personally as well as
+            professionally, we are able to deliver the highest level of client
+            service possible.{' '}
           </p>
         </HeroTextContainer>
       </HeroContainer>
+
       <HomepageTiles />
-      <MeetStaffSlider />
-      <FAQs />
       <Marquee>
         <h3>
           <i>Empowering</i> People, <i>Advancing</i> Pets.
         </h3>
       </Marquee>
+      <MeetStaffSlider />
+      <FAQs />
+
       <JoinTeamSection />
     </Layout>
   );
