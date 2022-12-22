@@ -71,7 +71,7 @@ const StaffPicture = styled('div')`
   position: relative;
   flex-shrink: 0;
   margin-right: 30px;
-  aspect-ratio: 0.7396;
+  aspect-ratio: 682 / 820;
   img {
     border-radius: var(--border-radius);
     object-fit: contain;
@@ -229,7 +229,7 @@ const staffMembers = [
         </p>
       </>
     ),
-    imgSrc: '/images/KMHeadshot.jpg',
+    imgSrc: '/images/clara.jpg',
   },
 ];
 

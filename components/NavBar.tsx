@@ -2,7 +2,6 @@ import { BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
 
-import { AiTwotoneHome } from 'react-icons/ai';
 import { FaHospital } from 'react-icons/fa';
 import { Logo } from './Logo';
 import { MdBiotech } from 'react-icons/md';
@@ -218,12 +217,12 @@ export const NavBar: React.FC<Props> = () => {
       <NavbarInnerContainer>
         <MobileSpacer />
         <NavbarLinksContainer className='left'>
-          <NavbarLink>
+          {/* <NavbarLink>
             <NoScrollLink href='/' passHref>
               <AiTwotoneHome />
               <p>Home</p>
             </NoScrollLink>
-          </NavbarLink>
+          </NavbarLink> */}
           <NavbarLink>
             <NoScrollLink href='/culture' passHref>
               <MdBiotech />
@@ -243,7 +242,9 @@ export const NavBar: React.FC<Props> = () => {
             </NoScrollLink>
           </NavbarLink>
         </NavbarLinksContainer>
-        <Logo />
+        <NoScrollLink href='/'>
+          <Logo />
+        </NoScrollLink>
         <NavbarLinksContainer className='right'>
           <NavbarLink>
             <NoScrollLink href='/our-people' passHref>
