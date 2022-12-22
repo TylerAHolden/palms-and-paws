@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { PET_PORTAL_LINK } from '../CONSTANTS';
 import { PetPortalButton } from './NavBar';
 import { motion } from 'framer-motion';
 
@@ -123,8 +122,8 @@ export const MobileMenu = ({
       <motion.li variants={menuLinkVariants}>
         <PetPortalButton
           href={'/contact'}
-          target='_blank'
-          rel='noreferrer noopener'
+          // target='_blank'
+          // rel='noreferrer noopener'
         >
           <p>Book Appointment</p>
         </PetPortalButton>
