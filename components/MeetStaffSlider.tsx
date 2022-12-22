@@ -191,10 +191,12 @@ const staffMembers = [
           Growth and innovation are constant drives to advance the quality of
           medicine and patient and pet parent experiences alike. Leadership
           development through an others-oriented approach is central to his
-          operating style– investing in others is how we change the world. In
-          his free time, he enjoys spending time with family, mentoring
-          veterinary students, mountain biking and staying current on the latest
-          medical trends/technologies.
+          operating style – investing in others is how we change the world.
+          Mentoring interns and veterinary students, and seeing them grow has
+          been a been a great source of joy. Beyond the stethoscope, he is
+          passionate about his family and friends, he loves dogs, his rescued
+          three-legged cat, and exploring new places and cultures with his
+          favorite people.
         </p>
       </>
     ),
@@ -217,14 +219,13 @@ const staffMembers = [
           Therapy: A Technician&apos;s Role&quot;, catapulting her into
           education and mentorship within the industry. Clara comes to Paws and
           Palms with 8 years of experience managing 24-hour emergency and
-          specialty hospitals as well as her experience as CEO and founder of
-          the consulting firm, CLP Veterinary Consulting Services, LLC. Her
-          vision is to educate, train and mentor members of the veterinary
-          community, from hospital staff and doctors, to the pet parents and is
-          excited to build out these principals at Paws and Palms. Clara resides
-          in Ventura County with her husband, son, 3 cats and tripod dog where
-          she enjoys traveling, food/wine and spending quality time with her
-          friends and family.
+          specialty hospitals as well as her experience as CEO and founder of a
+          veterinary consulting firm. Her vision is to educate, train and mentor
+          members of the veterinary community, from hospital staff and doctors,
+          to the pet parents and is excited to build out these principals at
+          Paws and Palms. Clara resides in Ventura County with her husband, son,
+          3 cats and tripod dog where she enjoys traveling, food/wine and
+          spending quality time with her friends and family.
         </p>
       </>
     ),
@@ -308,7 +309,7 @@ export const MeetStaffSlider: React.FC<Props> = () => {
             {staffMembers[index].bio}
           </StaffContent>
           <MeetStaffLink>
-            <Link href='/our-staff'>Meet our staff</Link>
+            <Link href='/our-people'>Meet our People</Link>
           </MeetStaffLink>
         </MotionDiv>
       </AnimatePresence>

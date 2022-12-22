@@ -4,7 +4,7 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
-import { Animation } from '../components/HomePageAnimations';
+import { Animation } from '../components/Animations';
 import { CultureBeyondSection } from '../components/CultureBeyondSection';
 import { CultureValuesSlider } from '../components/CultureValuesSlider';
 import Image from 'next/image';
@@ -114,7 +114,7 @@ export default function Culture() {
           <p>
             <strong>Others-oriented leadership</strong> is intentionally helping
             others grow and succeed intellectually, emotionally, personally, and
-            professionally, which is how we best care for people and pets.
+            professionally, - this is how we best care for people and pets.
           </p>
           <p>
             Our <strong>others-oriented culture</strong> of leadership

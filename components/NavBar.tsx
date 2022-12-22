@@ -1,8 +1,8 @@
+import { BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
 
 import { AiTwotoneHome } from 'react-icons/ai';
-import { BsFillPeopleFill } from 'react-icons/bs';
 import { FaHospital } from 'react-icons/fa';
 import { Logo } from './Logo';
 import { MdBiotech } from 'react-icons/md';
@@ -17,7 +17,7 @@ type Props = {};
 
 const NavBarContainer = styled('div')`
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 20px;
   backdrop-filter: blur(6px);
   top: 0px;
   position: sticky;
@@ -39,7 +39,7 @@ const NavBarContainer = styled('div')`
 
 const NavbarInnerContainer = styled('div')`
   width: 100%;
-  max-width: 1300px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -78,18 +78,24 @@ const NavbarLinksContainer = styled('div')`
   }
 `;
 
+// const PerPortalButtonContainer = styled('div')`
+//   flex: 1;
+//   display: flex;
+//   justify-content: flex-end;
+// `;
+
 const NavbarLink = styled('div')`
   a {
-    /* &::after {
+    &::after {
       position: absolute;
       content: '';
       width: 72%;
       height: 1px;
       background: var(--black);
       opacity: 0.2;
-      bottom: 19px;
+      bottom: 15px;
       left: 20%;
-    } */
+    }
     svg {
       opacity: 0;
       transform: translateX(10px);
@@ -191,37 +197,6 @@ const MobileSpacer = styled('div')`
   }
 `;
 
-const PhoneNumberContainer = styled('div')`
-  z-index: 1;
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 4px 5px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(6px);
-  a {
-    white-space: nowrap;
-    margin: 0 10px;
-    opacity: 0.6;
-    &:hover {
-      opacity: 1;
-    }
-  }
-  @media (max-width: 600px) {
-    bottom: -25px;
-    flex-direction: column;
-    a {
-      margin: 4 10px;
-    }
-  }
-`;
-
 export const NavBar: React.FC<Props> = () => {
   const [isAtTop, setIsAtTop] = useState(true);
 
@@ -241,10 +216,6 @@ export const NavBar: React.FC<Props> = () => {
 
   return (
     <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
-      <PhoneNumberContainer>
-        <a href='tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
-        <a href='mailto:hello@palmsandpawsvet.com'>hello@palmsandpawsvet.com</a>
-      </PhoneNumberContainer>
       <NavbarInnerContainer>
         <MobileSpacer />
         <NavbarLinksContainer className='left'>
@@ -266,30 +237,36 @@ export const NavBar: React.FC<Props> = () => {
               <p>Services</p>
             </NoScrollLink>
           </NavbarLink>
-        </NavbarLinksContainer>
-        <Logo />
-        <NavbarLinksContainer className='right'>
           <NavbarLink>
             <NoScrollLink href='/hospital' passHref>
               <FaHospital />
               <p>Hospital</p>
             </NoScrollLink>
           </NavbarLink>
-
+        </NavbarLinksContainer>
+        <Logo />
+        <NavbarLinksContainer className='right'>
           <NavbarLink>
-            <NoScrollLink href='/our-staff' passHref>
+            <NoScrollLink href='/our-people' passHref>
               <BsFillPeopleFill />
-              <p>Our Staff</p>
+              <p>Our People</p>
             </NoScrollLink>
           </NavbarLink>
-
+          <NavbarLink>
+            <NoScrollLink href='tel:+18667256729' passHref>
+              <BsFillTelephoneFill />
+              <p>Call Us</p>
+            </NoScrollLink>
+          </NavbarLink>
+          {/* <PerPortalButtonContainer> */}
           <PetPortalButton
-            href={PET_PORTAL_LINK}
+            href={'/contact'}
             target='_blank'
             rel='noreferrer noopener'
           >
             <p>Book Appointment</p>
           </PetPortalButton>
+          {/* </PerPortalButtonContainer> */}
         </NavbarLinksContainer>
         <MobileSpacer>
           <motion.nav

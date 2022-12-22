@@ -4,7 +4,7 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
-import { Animation } from '../components/HomePageAnimations';
+import { Animation } from '../components/Animations';
 import { FAQs } from '../components/FAQs';
 import { HomepageTiles } from '../components/HomepageTiles';
 import Image from 'next/image';
@@ -96,6 +96,11 @@ export default function Home() {
             <Animation path='/animations/cat.json' />
             <Animation path='/animations/dogShake.json' />
           </HomePageAnimationsContainer>
+          <h1>
+            <i>Empowering</i> People,
+            <br />
+            <i>Advancing</i> Pets.
+          </h1>
           <p>
             Welcome to Palms & Paws, delivering kind and compassionate
             veterinary medical services in a calm, friendly, and professional
@@ -104,19 +109,13 @@ export default function Home() {
           <p>
             We improve the lives of pets by supporting, educating, and
             empowering pet lovers. When we succeed, we ensure that we always
-            deliver on our promise of…
+            deliver on our promise of <i>Empowering People, Advancing Pets.</i>
           </p>
-          <h1>
-            <i>Empowering</i> People,
-            <br />
-            <i>Advancing</i> Pets.
-          </h1>
           <p>
-            Mission Statement: We are a committed group of professionals,
-            dedicated to seeing pets thrive, and making pet-parents happy. By
-            empowering our staff to succeed personally as well as
-            professionally, we are able to deliver the highest level of client
-            service possible.{' '}
+            We are a committed group of professionals, dedicated to seeing pets
+            thrive, and making pet-parents happy. By empowering our staff to
+            succeed personally as well as professionally, we are able to deliver
+            the highest level of client service possible.
           </p>
         </HeroTextContainer>
       </HeroContainer>

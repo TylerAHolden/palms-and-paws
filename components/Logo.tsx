@@ -9,23 +9,24 @@ const TextLogoImageContainer = styled('div')`
 `;
 
 const FullLogoContainer = styled('div')`
-  width: 172px;
+  width: 232px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: -10px;
+  margin-bottom: -10px;
   @media (max-width: 1300px) {
-    width: 162px;
+    width: 222px;
   }
 
   @media (max-width: 1100px) {
-    width: 152px;
+    width: 212px;
   }
 
   @media (max-width: 500px) {
-    width: 160px;
+    width: 190px;
   }
 `;
 

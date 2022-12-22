@@ -151,11 +151,15 @@ const ITEMS = [
   </>,
   <>
     <h4>Dentistry</h4>
+    <p>
+      With a state of the art dental unit, we are ready and able to offer
+      routine to advanced dentistry services including:
+    </p>
     <ul>
       <li>Routine Dental Cleaning</li>
-      <li>Full Mouth X-rays</li>
-      <li>Oral Mass Biopsy/Excision</li>
-      <li>Tooth Extraction</li>
+      <li>Full Mouth X-Rays</li>
+      <li>Oral Mass Biopsy or Removal</li>
+      <li>Simple and Complex Tooth Extraction</li>
     </ul>
   </>,
   <>

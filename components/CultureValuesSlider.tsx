@@ -12,13 +12,14 @@ const Container = styled('div')`
 const Slide = styled('div')`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
   width: auto;
   background: var(--green);
   border-radius: var(--border-radius);\
   margin: 0 10px;
   padding: 40px 30px;
+  padding-top: 110px;
   height: 380px;
   &.embla__slide {
     min-width: auto;
@@ -59,10 +60,6 @@ const ITEMS = [
       We are driven to achieve the best possible outcome, in a deeply caring
       environment.
     </p>
-  </>,
-  <>
-    <h4>Connected Leadership</h4>
-    <p>We lead by inspiring, engaging and understanding.</p>
   </>,
   <>
     <h4>Innovation Driving Action</h4>

@@ -296,12 +296,14 @@ export const Footer: React.FC<Props> = () => {
           </AddressAndContact>
           <LinksContainer>
             <FooterListContainer>
-              <ListTitle>Our Staff</ListTitle>
+              <ListTitle>Our People</ListTitle>
               <ListItem>
-                <NoScrollLink href='/our-staff'>Meet Your Doctors</NoScrollLink>
+                <NoScrollLink href='/our-people'>
+                  Meet Your Doctors
+                </NoScrollLink>
               </ListItem>
               <ListItem>
-                <NoScrollLink href='/our-staff'>Join the Team</NoScrollLink>
+                <NoScrollLink href='/our-people'>Join the Team</NoScrollLink>
               </ListItem>
             </FooterListContainer>
             <FooterListContainer>

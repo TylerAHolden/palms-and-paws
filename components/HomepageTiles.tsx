@@ -112,8 +112,8 @@ export const HomepageTiles: React.FC<Props> = () => {
             result? The best, and most compassionate veterinary care possible.
           </p>
           <ButtonContainer>
-            <Button buttonStyle='green' routerLink='/our-staff'>
-              MEET OUR STAFF
+            <Button buttonStyle='green' routerLink='/our-people'>
+              MEET OUR PEOPLE
             </Button>
           </ButtonContainer>
         </TileContainer>

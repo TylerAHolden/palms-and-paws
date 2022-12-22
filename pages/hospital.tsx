@@ -60,13 +60,29 @@ const HospitalHeroImageContainerInner = styled('div')`
 `;
 
 const StyledHeroImageContainer = styled(HeroImageContainer)`
-  border-radius: var(--border-radius);
+  img {
+    border-radius: var(--border-radius);
+  }
   max-width: 600px;
   margin-left: var(--page-side-padding);
 `;
 
 const StyledHeroTextContainer = styled(HeroTextContainer)`
   max-width: 600px;
+`;
+
+const Caption = styled('p')`
+  position: absolute;
+  top: -28px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  z-index: 1;
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 21px;
 `;
 
 const title =
@@ -135,6 +151,7 @@ export default function Hospital() {
 
       <HeroContainer>
         <StyledHeroImageContainer ar='1250 / 1088' className={'loaded'}>
+          <Caption>Santa Monica Animal Shelter</Caption>
           <Image
             src='/images/hospital-shelter-image.jpg'
             alt='santa monica animal shelter'

@@ -144,8 +144,6 @@ export default function Services() {
 
   const [state, handleSubmit] = useForm('mnqyaqqk');
 
-  console.log(state);
-
   useEffect(() => {
     if (!grecaptcha) return;
     grecaptcha.ready(function () {
