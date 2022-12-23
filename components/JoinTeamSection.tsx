@@ -1,4 +1,4 @@
-import { Animation } from './HomePageAnimations';
+import { Animation } from './Animations';
 import { Button } from './Buttons';
 import React from 'react';
 import { styled } from 'goober';
@@ -43,9 +43,13 @@ const InfoContent = styled('div')`
 
 const AnimationContainer = styled('div')`
   width: 50%;
-  transform: scale(-1, 1);
-  margin-top: -290px;
+  margin-top: -220px;
   margin-bottom: -50px;
+  pointer-events: none;
+  transform: scale(-1, 1);
+  @media (max-width: 1100px) {
+    margin-top: -290px;
+  }
   @media (max-width: 700px) {
     margin-top: -240px;
     margin-bottom: -30px;
@@ -56,7 +60,7 @@ const AnimationContainer = styled('div')`
 
 export const JoinTeamSection: React.FC<Props> = () => {
   const mailToLink = () => {
-    window.open(String('mailto:recruitment@palmsandpaws.com'));
+    window.open(String('mailto:recruitment@palmspawsvet.com'));
   };
 
   return (

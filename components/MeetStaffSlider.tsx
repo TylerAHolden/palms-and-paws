@@ -71,7 +71,7 @@ const StaffPicture = styled('div')`
   position: relative;
   flex-shrink: 0;
   margin-right: 30px;
-  aspect-ratio: 0.7396;
+  aspect-ratio: 682 / 820;
   img {
     border-radius: var(--border-radius);
     object-fit: contain;
@@ -93,6 +93,7 @@ const StaffContent = styled('div')`
   width: 640px;
   margin-left: 30px;
   h2,
+  h4,
   p {
     color: white;
   }
@@ -173,6 +174,7 @@ const swipePower = (offset: number, velocity: number) => {
 const staffMembers = [
   {
     name: 'Kevin McEvilly, DVM',
+    title: 'Chief of Staff, COO',
     bio: (
       <>
         <p>
@@ -189,14 +191,45 @@ const staffMembers = [
           Growth and innovation are constant drives to advance the quality of
           medicine and patient and pet parent experiences alike. Leadership
           development through an others-oriented approach is central to his
-          operating style– investing in others is how we change the world. In
-          his free time, he enjoys spending time with family, mentoring
-          veterinary students, mountain biking and staying current on the latest
-          medical trends/technologies.
+          operating style – investing in others is how we change the world.
+          Mentoring interns and veterinary students, and seeing them grow has
+          been a been a great source of joy. Beyond the stethoscope, he is
+          passionate about his family and friends, he loves dogs, his rescued
+          three-legged cat, and exploring new places and cultures with his
+          favorite people.
         </p>
       </>
     ),
     imgSrc: '/images/KMHeadshot.jpg',
+  },
+  {
+    name: 'Clara Pelton RVT, BS, CVPM',
+    title: 'Practice Manager',
+    bio: (
+      <>
+        <p>
+          Clara Pelton RVT, BS, CVPM is a Southern California native who has a
+          lifelong affinity for helping animals. She started her career in
+          veterinary medicine as a kennel assistant before attending Cal Poly
+          Pomona and graduating with a degree in Microbiology. After graduation,
+          Clara continued her work in the veterinary industry focusing on
+          emergency and critical care, earning her Registered Veterinary
+          Technician license. Inspired and fueled by her experience, Clara was
+          published in NAVTA magazine for an article called, &quot;Fluid
+          Therapy: A Technician&apos;s Role&quot;, catapulting her into
+          education and mentorship within the industry. Clara comes to Paws and
+          Palms with 8 years of experience managing 24-hour emergency and
+          specialty hospitals as well as her experience as CEO and founder of a
+          veterinary consulting firm. Her vision is to educate, train and mentor
+          members of the veterinary community, from hospital staff and doctors,
+          to the pet parents and is excited to build out these principals at
+          Paws and Palms. Clara resides in Ventura County with her husband, son,
+          3 cats and tripod dog where she enjoys traveling, food/wine and
+          spending quality time with her friends and family.
+        </p>
+      </>
+    ),
+    imgSrc: '/images/clara.jpg',
   },
 ];
 
@@ -272,10 +305,11 @@ export const MeetStaffSlider: React.FC<Props> = () => {
               </SliderButton>
             </SliderButtonsContainer>
             <h2>{staffMembers[index].name}</h2>
+            <h4>{staffMembers[index].title}</h4>
             {staffMembers[index].bio}
           </StaffContent>
           <MeetStaffLink>
-            <Link href='/our-staff'>Meet our staff</Link>
+            <Link href='/our-people'>Meet our People</Link>
           </MeetStaffLink>
         </MotionDiv>
       </AnimatePresence>

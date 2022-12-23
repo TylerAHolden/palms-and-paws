@@ -1,8 +1,7 @@
+import { BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
 
-import { AiTwotoneHome } from 'react-icons/ai';
-import { BsFillPeopleFill } from 'react-icons/bs';
 import { FaHospital } from 'react-icons/fa';
 import { Logo } from './Logo';
 import { MdBiotech } from 'react-icons/md';
@@ -10,14 +9,13 @@ import { MdMedicalServices } from 'react-icons/md';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
 import NoScrollLink from './NoScrollLink';
-import { PET_PORTAL_LINK } from '../CONSTANTS';
 import { styled } from 'goober';
 
 type Props = {};
 
 const NavBarContainer = styled('div')`
   width: 100%;
-  padding: 20px 0;
+  padding: 20px 20px;
   backdrop-filter: blur(6px);
   top: 0px;
   position: sticky;
@@ -39,7 +37,7 @@ const NavBarContainer = styled('div')`
 
 const NavbarInnerContainer = styled('div')`
   width: 100%;
-  max-width: 1300px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -78,8 +76,24 @@ const NavbarLinksContainer = styled('div')`
   }
 `;
 
+// const PerPortalButtonContainer = styled('div')`
+//   flex: 1;
+//   display: flex;
+//   justify-content: flex-end;
+// `;
+
 const NavbarLink = styled('div')`
   a {
+    &::after {
+      position: absolute;
+      content: '';
+      width: 72%;
+      height: 1px;
+      background: var(--black);
+      opacity: 0.2;
+      bottom: 15px;
+      left: 20%;
+    }
     svg {
       opacity: 0;
       transform: translateX(10px);
@@ -89,6 +103,7 @@ const NavbarLink = styled('div')`
       margin-top: -2px;
     }
     p {
+      white-space: nowrap;
       transition: all 0.1s ease-in-out;
       font-size: 16px;
     }
@@ -101,6 +116,7 @@ const NavbarLink = styled('div')`
     opacity: 0.7;
     transition: all 100ms ease-in-out;
     text-decoration: none;
+    position: relative;
     @media (max-width: 1300px) {
       padding: 10px 20px;
       font-size: 15px;
@@ -125,15 +141,18 @@ const NavbarLink = styled('div')`
 `;
 
 export const PetPortalButton = styled('a')`
-  background: var(--light-grey);
-  border: 0.5px solid var(--black);
+  background: var(--blue);
   margin-left: 20px;
   border-radius: 50px;
   padding: 8px 26px;
   outline: none;
   cursor: pointer;
-  transition: background 100ms ease-in-out;
+  transition: box-shadow 100ms ease-in-out, all 0.1s ease;
   text-decoration: none;
+  --shadow-color: 209deg 66% 59%;
+  box-shadow: 0px 0.7px 0.9px hsl(209deg 26% 59% / 0.12),
+    0.1px 3.5px 4.6px -0.6px hsl(209deg 16% 59% / 0.21),
+    0.3px 5.3px 14.8px -1.2px hsl(var(--shadow-color) / 0.49);
   p {
     font-weight: 600;
     text-decoration: none;
@@ -142,6 +161,8 @@ export const PetPortalButton = styled('a')`
     text-transform: uppercase;
     letter-spacing: 0.07em;
     font-size: 15px;
+    white-space: nowrap;
+    color: white;
   }
   @media (max-width: 1300px) {
     margin-left: 15px;
@@ -157,10 +178,10 @@ export const PetPortalButton = styled('a')`
     }
   }
   &:hover {
-    background: var(--blue);
-    p {
-      color: white;
-    }
+    transform: scale(1.05);
+    box-shadow: 0px 0.7px 0.9px hsl(209deg 26% 59% / 0.32),
+      0.1px 3.5px 4.6px -0.6px hsl(209deg 16% 59% / 0.41),
+      0.3px 5.3px 14.8px -1.2px hsl(var(--shadow-color) / 0.79);
   }
 `;
 
@@ -196,12 +217,12 @@ export const NavBar: React.FC<Props> = () => {
       <NavbarInnerContainer>
         <MobileSpacer />
         <NavbarLinksContainer className='left'>
-          <NavbarLink>
+          {/* <NavbarLink>
             <NoScrollLink href='/' passHref>
               <AiTwotoneHome />
               <p>Home</p>
             </NoScrollLink>
-          </NavbarLink>
+          </NavbarLink> */}
           <NavbarLink>
             <NoScrollLink href='/culture' passHref>
               <MdBiotech />
@@ -214,30 +235,38 @@ export const NavBar: React.FC<Props> = () => {
               <p>Services</p>
             </NoScrollLink>
           </NavbarLink>
-        </NavbarLinksContainer>
-        <Logo />
-        <NavbarLinksContainer className='right'>
           <NavbarLink>
             <NoScrollLink href='/hospital' passHref>
               <FaHospital />
               <p>Hospital</p>
             </NoScrollLink>
           </NavbarLink>
-
+        </NavbarLinksContainer>
+        <NoScrollLink href='/'>
+          <Logo />
+        </NoScrollLink>
+        <NavbarLinksContainer className='right'>
           <NavbarLink>
-            <NoScrollLink href='/our-staff' passHref>
+            <NoScrollLink href='/our-people' passHref>
               <BsFillPeopleFill />
-              <p>Our Staff</p>
+              <p>Our People</p>
             </NoScrollLink>
           </NavbarLink>
-
+          <NavbarLink>
+            <NoScrollLink href='tel:+18667256729' passHref>
+              <BsFillTelephoneFill />
+              <p>Call Us</p>
+            </NoScrollLink>
+          </NavbarLink>
+          {/* <PerPortalButtonContainer> */}
           <PetPortalButton
-            href={PET_PORTAL_LINK}
-            target='_blank'
-            rel='noreferrer noopener'
+            href={'/contact'}
+            // target='_blank'
+            // rel='noreferrer noopener'
           >
-            <p>PET PORTAL</p>
+            <p>Book Appointment</p>
           </PetPortalButton>
+          {/* </PerPortalButtonContainer> */}
         </NavbarLinksContainer>
         <MobileSpacer>
           <motion.nav

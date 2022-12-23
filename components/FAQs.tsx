@@ -80,6 +80,38 @@ const AccordionExpandButton = styled(Button)`
 
 const FAQList = [
   {
+    question: <p>What are your hours?</p>,
+    answer: (
+      <>
+        <p>Monday through Friday 8:00 AM to 8:00 PM</p>
+        <p>Saturday & Sunday, 8:00 AM to 4:00 PM</p>
+      </>
+    ),
+  },
+  {
+    question: <p>Do you see emergencies?</p>,
+    answer: (
+      <p>
+        Palms & Paws Veterinary Center is a general practice, but we are not a
+        specialty or emergency hospital. While we will have urgent care
+        appointments and help provide stabilization for emergency cases, we are
+        not a 24-hour facility. For cases that need more advanced care or the
+        extra support overnight, we will do what is best for our patient and
+        transfer to a local emergency room.
+      </p>
+    ),
+  },
+  {
+    question: <p>What is specialist support?</p>,
+    answer: (
+      <p>
+        We are fortunate to have specialists that will spend time with the Palms
+        & Paws team to add additional diagnostics and services to our patient’s
+        without the need to travel to a local specialty hospital.
+      </p>
+    ),
+  },
+  {
     question: <p>What makes Palms and Paws different?</p>,
     answer: (
       <p>

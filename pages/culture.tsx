@@ -4,7 +4,7 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
-import { Animation } from '../components/HomePageAnimations';
+import { Animation } from '../components/Animations';
 import { CultureBeyondSection } from '../components/CultureBeyondSection';
 import { CultureValuesSlider } from '../components/CultureValuesSlider';
 import Image from 'next/image';
@@ -112,32 +112,36 @@ export default function Culture() {
       <CultureTextContainer>
         <CultureTextContainerInner>
           <p>
-            Our job isn’t simply caring for your pet. It’s helping you feel safe
-            and secure about that care. With highly-skilled doctors and medical
-            teams, working in a state-of-the-art environment that keeps you
-            informed, engaged and at ease with your pet’s healthcare.
+            <strong>Others-oriented leadership</strong> is intentionally helping
+            others grow and succeed intellectually, emotionally, personally, and
+            professionally, - this is how we best care for people and pets.
           </p>
           <p>
-            Our intention is to become a pillar of the local pet community, by
-            providing the highest level of veterinary medicine, client
-            experience, and pet-problem solving possible. This can only happen
-            when you have a team that you trust, not simply to do their work to
-            the highest standards but to continue to learn and grow every day.
+            Our <strong>others-oriented culture</strong> of leadership
+            development and professional empowerment is at the heart of our
+            ability to deliver superior service. This can only happen when you
+            have a team that you <strong>trust</strong>, to provide the highest
+            level of veterinary medicine, client experience, and pet-problem
+            solving.
           </p>
           <p>
-            That is why our others-oriented culture of leadership development
-            and professional empowerment is at the heart of our ability to
-            deliver superior service. With leadership and growth as central
-            tenets of the Palms & Paws approach, constant investment in one
-            another will allow everyone we work with to become the best and most
-            integrated version of themselves.
+            Our continued <strong>investment</strong> in our own team’s
+            leadership and growth enables team members to advance in their
+            careers, and deliver <strong>ever-more thoughtful care</strong>.
           </p>
           <p>
-            Our approach brings pet owners into the center of their pet’s care
-            and well-being, nurturing deeper bonds between you and your furry
-            friend. And our investment in our own team’s leadership and growth
-            enables team members to continue to advance in their careers, and
-            deliver ever-more thoughtful care.
+            Our goal is to <strong>care</strong> for your pet, while ensuring{' '}
+            <strong>safety</strong> and <strong>security</strong> for you both.
+            With highly-skilled doctors, team-based medicine, and a
+            state-of-the-art veterinary medical center, we will keep you{' '}
+            <strong>informed</strong>, and <strong>engaged</strong> with your
+            pet’s care.
+          </p>
+          <p>
+            <strong>The result?</strong> We bring pet owners into the center of
+            their pet’s care and well-being, and we{' '}
+            <strong>nurture deeper bonds</strong> between you and your furry
+            friend.
           </p>
           <p>
             Your pet is your child. We understand that. Our mission is to look

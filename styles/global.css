@@ -204,6 +204,7 @@ h4 {
   left: 0;
   width: 100%;
   padding-top: 25px;
+  z-index: 10;
 }
 
 .mobile-menu.open {
@@ -234,6 +235,7 @@ h4 {
   height: 100vh;
   width: 100vw;
   background: white;
+  z-index: 10;
 }
 
 .mobile-menu-bg.open {
