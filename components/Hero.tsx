@@ -32,6 +32,8 @@ export const HeroImageContainer = styled('div')<{ ar: string }>`
   &:first-child {
     @media (min-width: 901px) {
       margin-right: 20px;
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
       img {
         border-top-right-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
@@ -41,6 +43,8 @@ export const HeroImageContainer = styled('div')<{ ar: string }>`
   &:not(:first-child) {
     @media (min-width: 901px) {
       margin-left: 20px;
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
       img {
         border-top-left-radius: var(--border-radius);
         border-bottom-left-radius: var(--border-radius);
@@ -52,6 +56,7 @@ export const HeroImageContainer = styled('div')<{ ar: string }>`
     width: calc(100% - (var(--page-side-padding) * 2));
     margin: 20px var(--page-side-padding);
     order: -1;
+    border-radius: var(--border-radius);
     img {
       border-radius: var(--border-radius);
     }

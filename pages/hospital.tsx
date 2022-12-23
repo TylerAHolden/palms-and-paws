@@ -60,6 +60,7 @@ const HospitalHeroImageContainerInner = styled('div')`
 `;
 
 const StyledHeroImageContainer = styled(HeroImageContainer)`
+  border-radius: var(--border-radius);
   img {
     border-radius: var(--border-radius);
   }
