@@ -41,12 +41,18 @@ const ContactForm = styled('form')`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const ContactCategoryContainer = styled('div')`
   display: flex;
   flex-direction: column;
   width: 45%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HelpCategorySelectContainer = styled('div')`
@@ -91,6 +97,9 @@ const ContactInputsContainer = styled('div')`
   align-items: stretch;
   justify-content: flex-start;
   padding-top: 40px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   button {
     align-self: flex-end;
     color: var(--black);
