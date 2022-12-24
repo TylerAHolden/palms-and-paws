@@ -67,7 +67,7 @@ export default function Home() {
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   return (
     <Layout
-      title='Palms & Paws Veterinary Clinic'
+      title='Palms & Paws Veterinary Center'
       description={`${title} - ${subtitle}`}
     >
       <HeroContainer>

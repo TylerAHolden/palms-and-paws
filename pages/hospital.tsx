@@ -102,7 +102,7 @@ export default function Hospital() {
           <Image
             priority
             src='/images/hospital-header.jpg'
-            alt='veterinary clinic and hospital floor plan'
+            alt='veterinary center and hospital floor plan'
             sizes='
           100vw
         '
