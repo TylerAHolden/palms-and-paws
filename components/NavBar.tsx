@@ -9,6 +9,7 @@ import { MdMedicalServices } from 'react-icons/md';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
 import NoScrollLink from './NoScrollLink';
+import { PET_PORTAL_LINK } from '../CONSTANTS';
 import { styled } from 'goober';
 
 type Props = {};
@@ -260,9 +261,9 @@ export const NavBar: React.FC<Props> = () => {
           </NavbarLink>
           {/* <PerPortalButtonContainer> */}
           <PetPortalButton
-            href={'/contact'}
-            // target='_blank'
-            // rel='noreferrer noopener'
+            href={PET_PORTAL_LINK}
+            target='_blank'
+            rel='noreferrer noopener'
           >
             <p>Book Appointment</p>
           </PetPortalButton>

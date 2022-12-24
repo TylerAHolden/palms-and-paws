@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from './Logo';
 import NoScrollLink from './NoScrollLink';
+import { PET_PORTAL_LINK } from '../CONSTANTS';
 import { styled } from 'goober';
 
 type Props = {};
@@ -309,7 +310,13 @@ export const Footer: React.FC<Props> = () => {
             <FooterListContainer>
               <ListTitle>Hospital</ListTitle>
               <ListItem>
-                <NoScrollLink href='/contact'>Book an Appointment</NoScrollLink>
+                <NoScrollLink
+                  href={PET_PORTAL_LINK}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Book an Appointment
+                </NoScrollLink>
               </ListItem>
               <ListItem>
                 <NoScrollLink href='/hospital'>Take a Tour</NoScrollLink>

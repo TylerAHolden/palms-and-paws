@@ -53,9 +53,9 @@ export default function Services() {
           </p>
           <Button
             buttonStyle='grey'
-            href={'/contact'}
-            // target='_blank'
-            // rel='noopener noreferrer'
+            href={PET_PORTAL_LINK}
+            target='_blank'
+            rel='noopener noreferrer'
           >
             Book Now
           </Button>

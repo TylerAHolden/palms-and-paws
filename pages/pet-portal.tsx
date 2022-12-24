@@ -108,8 +108,6 @@ export default function Services() {
       <Container>
         <iframe
           src='https://palmspawsvet.usw2.ezyvet.com/external/portal/main/login'
-          height='400'
-          width='680'
           name='ezyBooking'
         ></iframe>
       </Container>
