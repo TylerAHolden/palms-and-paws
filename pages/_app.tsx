@@ -17,7 +17,7 @@ import { setup } from 'goober';
 setup(createElement, prefix);
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const url = `https://palmsandpaws.com${router.route}`;
+  const url = `https://palmspawsvet.com${router.route}`;
 
   useEffect(() => {
     const path = window.location.hash;
