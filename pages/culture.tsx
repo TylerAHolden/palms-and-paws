@@ -85,7 +85,7 @@ export default function Culture() {
           </h1>
         </HeroTextContainer>
         <HeroImageContainer
-          ar='1401 / 1185'
+          ar='1401 / 1510'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image

@@ -21,7 +21,7 @@ export default function Staff() {
     <Layout title='Our Staff' description={`${title} - ${subtitle}`}>
       <HeroContainer>
         <HeroImageContainer
-          ar='1401 / 1185'
+          ar='1401 / 1223'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image

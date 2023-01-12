@@ -23,7 +23,7 @@ export default function Services() {
     <Layout title='Services' description={`${title} - ${subtitle}`}>
       <HeroContainer>
         <HeroImageContainer
-          ar='1401 / 1185'
+          ar='1401 / 1271'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
