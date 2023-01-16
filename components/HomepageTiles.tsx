@@ -87,9 +87,8 @@ export const HomepageTiles: React.FC<Props> = () => {
             State of the art <i>hospital</i> facilities
           </h4>
           <p>
-            Between our in-house lab and diagnostic equipment as well as out
-            outside laboratory resource, we offer a full range of diagnostic
-            capabilities.
+            Between our in-house diagnostic lab, and our outside laboratory
+            resources, we offer a full range of diagnostic capabilities.
           </p>
           <ButtonContainer>
             <Button buttonStyle='green' routerLink='/hospital'>
