@@ -83,7 +83,7 @@ const FAQList = [
     question: <p>What are your hours?</p>,
     answer: (
       <>
-        <p>Monday through Friday 8:00 AM to 8:00 PM</p>
+        <p>Monday through Friday 8:00 AM to 4:30 PM</p>
         <p>Saturday & Sunday, 8:00 AM to 4:00 PM</p>
       </>
     ),
