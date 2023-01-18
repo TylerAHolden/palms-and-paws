@@ -21,11 +21,12 @@ export default function Staff() {
     <Layout title='Our Staff' description={`${title} - ${subtitle}`}>
       <HeroContainer>
         <HeroImageContainer
-          ar='1401 / 1185'
+          ar='1401 / 1223'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
             priority
+            quality={85}
             src='/images/staff-header.jpg'
             alt='Veterinary doctors diagnosing at cat'
             sizes='(max-width: 900px) 50vw, 25vw'

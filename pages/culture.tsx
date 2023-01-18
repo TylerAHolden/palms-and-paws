@@ -85,11 +85,12 @@ export default function Culture() {
           </h1>
         </HeroTextContainer>
         <HeroImageContainer
-          ar='1401 / 1185'
+          ar='1401 / 1510'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
             priority
+            quality={85}
             src='/images/culture-header-image.jpg'
             alt='Palms and Paws Header Image'
             fill

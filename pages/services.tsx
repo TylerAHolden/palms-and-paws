@@ -23,11 +23,12 @@ export default function Services() {
     <Layout title='Services' description={`${title} - ${subtitle}`}>
       <HeroContainer>
         <HeroImageContainer
-          ar='1401 / 1185'
+          ar='1401 / 1271'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
             priority
+            quality={85}
             src='/images/services-header.jpg'
             alt='veterinarian and doctor treating dog'
             fill

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { Button } from './Buttons';
 import Image from 'next/image';
@@ -66,6 +66,53 @@ const MotionDiv = styled(motion.div as any)`
   }
 `;
 
+const ToggleButton = styled('div')`
+  width: 16px;
+  height: 16px;
+  margin: 6px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.7;
+  box-shadow: 0px 4px 12px hsl(209deg 66% 37% / 0.41);
+  position: relative;
+  &::after {
+    content: '';
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9px;
+    height: 9px;
+    background: linear-gradient(0deg, #317dc4, #55a6f2);
+    z-index: 6;
+    border-radius: 50%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  &:hover {
+    opacity: 0.4;
+  }
+  &.active {
+    opacity: 1;
+    &::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+`;
+
+const ToggleButtonsContainer = styled('div')`
+  position: absolute;
+  z-index: 5;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+`;
+
 const StaffPicture = styled('div')`
   width: 340px;
   position: relative;
@@ -73,12 +120,16 @@ const StaffPicture = styled('div')`
   margin-right: 30px;
   aspect-ratio: 682 / 820;
   img {
+    transition: opacity 0.3s ease;
     border-radius: var(--border-radius);
     object-fit: contain;
     --shadow-color: 209deg 66% 37%;
 
     box-shadow: 0px 0.4px 0.5px hsl(var(--shadow-color) / 0.41),
       -0.1px 6.8px 7.9px -2.3px hsl(var(--shadow-color) / 0.45);
+    &.hide {
+      opacity: 0;
+    }
   }
   @media (max-width: 947px) {
     margin-right: 0px;
@@ -200,7 +251,8 @@ const staffMembers = [
         </p>
       </>
     ),
-    imgSrc: '/images/KMHeadshot.jpg',
+    img1Src: '/images/kevin-image-1.jpg',
+    img2Src: '/images/kevin-image-2.jpg',
   },
   {
     name: 'Clara Pelton RVT, BS, CVPM',
@@ -229,12 +281,25 @@ const staffMembers = [
         </p>
       </>
     ),
-    imgSrc: '/images/clara.jpg',
+    img1Src: '/images/clara-image-1.jpg',
+    img2Src: '/images/clara-image-2.jpg',
   },
 ];
 
 export const MeetStaffSlider: React.FC<Props> = () => {
   const [[page, direction], setPage] = useState([0, 0]);
+  const [showImageNumber, setShowImageNumber] = useState(1);
+  const timeout = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+
+    timeout.current = setTimeout(() => {
+      setShowImageNumber(showImageNumber === 1 ? 2 : 1);
+    }, 10000);
+  }, [showImageNumber]);
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
   // then wrap that within 0-2 to find our image ID in the array below. By passing an
@@ -279,11 +344,29 @@ export const MeetStaffSlider: React.FC<Props> = () => {
         >
           <StaffPicture>
             <Image
-              src={staffMembers[index].imgSrc}
+              src={staffMembers[index].img1Src}
               alt={staffMembers[index].name}
               fill
               sizes='340px'
+              className={showImageNumber === 1 ? '' : 'hide'}
             />
+            <Image
+              src={staffMembers[index].img2Src}
+              alt={staffMembers[index].name}
+              fill
+              sizes='340px'
+              className={showImageNumber === 2 ? '' : 'hide'}
+            />
+            <ToggleButtonsContainer>
+              <ToggleButton
+                className={showImageNumber === 1 ? 'active' : ''}
+                onClick={() => setShowImageNumber(1)}
+              />
+              <ToggleButton
+                className={showImageNumber === 2 ? 'active' : ''}
+                onClick={() => setShowImageNumber(2)}
+              />
+            </ToggleButtonsContainer>
           </StaffPicture>
           <StaffContent>
             <SliderButtonsContainer>

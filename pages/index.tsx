@@ -72,7 +72,7 @@ export default function Home() {
     >
       <HeroContainer>
         <HeroImageContainer
-          ar='1423 / 1185'
+          ar='1423 / 1175'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
@@ -81,6 +81,7 @@ export default function Home() {
             alt='Palms and Paws Header Image'
             fill
             sizes='(max-width: 900px) 50vw, 25vw'
+            quality={85}
             onLoad={(event) => {
               const target = event.target as any;
 
