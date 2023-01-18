@@ -28,6 +28,7 @@ export default function Services() {
         >
           <Image
             priority
+            quality={85}
             src='/images/services-header.jpg'
             alt='veterinarian and doctor treating dog'
             fill

@@ -26,6 +26,7 @@ export default function Staff() {
         >
           <Image
             priority
+            quality={85}
             src='/images/staff-header.jpg'
             alt='Veterinary doctors diagnosing at cat'
             sizes='(max-width: 900px) 50vw, 25vw'

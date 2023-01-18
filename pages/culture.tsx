@@ -90,6 +90,7 @@ export default function Culture() {
         >
           <Image
             priority
+            quality={85}
             src='/images/culture-header-image.jpg'
             alt='Palms and Paws Header Image'
             fill
