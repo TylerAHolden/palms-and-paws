@@ -212,7 +212,7 @@ export default function Hospital() {
       <StyledCarouselBase autoplay inViewThreshold={4}>
         {HOSPITAL_IMAGES.map((image, i) => (
           <Slide className='embla__slide' key={i}>
-            <Image src={image.src} alt={image.alt} layout='fill' />
+            <Image src={image.src} alt={image.alt} layout='fill' sizes='40vw' />
           </Slide>
         ))}
       </StyledCarouselBase>
