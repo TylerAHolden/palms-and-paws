@@ -72,7 +72,7 @@ export default function Home() {
     >
       <HeroContainer>
         <HeroImageContainer
-          ar='1423 / 1175'
+          ar='1600 / 1065'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
