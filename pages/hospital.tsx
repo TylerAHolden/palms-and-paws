@@ -4,6 +4,7 @@ import {
   HeroTextContainer,
 } from '../components/Hero';
 
+import CarouselBase from '../components/CarouselBase';
 import Image from 'next/image';
 import Layout from '../components/Layout';
 import { styled } from 'goober';
@@ -86,6 +87,65 @@ const Caption = styled('p')`
   font-size: 21px;
 `;
 
+const Slide = styled('div')`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: var(--page-side-padding);
+  padding-right: var(--page-side-padding);
+  aspect-ratio: 1600 / 1850;
+  width: 20vw;
+  margin: 10px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  position: relative;
+  @media (max-width: 800px) {
+    width: 40vw;
+  }
+  &.embla__slide {
+    min-width: 20vw;
+    @media (max-width: 800px) {
+      min-width: 40vw;
+    }
+  }
+`;
+
+const StyledCarouselBase = styled(CarouselBase)`
+  margin-top: -20px;
+  margin-bottom: 160px;
+  @media (max-width: 800px) {
+    margin-bottom: 80px;
+  }
+`;
+
+const HOSPITAL_IMAGES = [
+  {
+    src: '/images/hospital/1.jpg',
+    alt: 'dogs in waiting area of veterinary clinic',
+  },
+  {
+    src: '/images/hospital/2.jpg',
+    alt: 'radiology equipment in vet center',
+  },
+  {
+    src: '/images/hospital/3.jpg',
+    alt: 'family walking outside of veterinarian clinic',
+  },
+  {
+    src: '/images/hospital/4.jpg',
+    alt: 'diagnostic stations inside of new veterinary office',
+  },
+  {
+    src: '/images/hospital/5.jpg',
+    alt: 'person with pet dog',
+  },
+  {
+    src: '/images/hospital/6.jpg',
+    alt: 'palms and paws veterinary clinic for dogs cats and small animals',
+  },
+];
+
 const title =
   'Introducing the newest and most advanced pet hospital on the Westside.';
 const subtitle =
@@ -149,6 +209,13 @@ export default function Hospital() {
           </div>
         </HospitalInfoTextContainer>
       </HospitalHeroImageContainer>
+      <StyledCarouselBase autoplay inViewThreshold={4}>
+        {HOSPITAL_IMAGES.map((image, i) => (
+          <Slide className='embla__slide' key={i}>
+            <Image src={image.src} alt={image.alt} layout='fill' />
+          </Slide>
+        ))}
+      </StyledCarouselBase>
 
       <HeroContainer>
         <StyledHeroImageContainer ar='1250 / 1088' className={'loaded'}>
