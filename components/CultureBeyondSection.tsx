@@ -16,7 +16,7 @@ const InnerContent = styled('div')`
 `;
 
 const ImageContainer = styled('div')`
-  aspect-ratio: 1327 / 728;
+  aspect-ratio: 1600 / 961;
   width: 100%;
   display: flex;
   position: relative;
