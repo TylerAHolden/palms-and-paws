@@ -55,11 +55,7 @@ export const CultureBeyondSection: React.FC = () => (
           alt='dog running on beach'
           fill
           sizes='
-          (max-width: 400px) 400px,
-          (max-width: 500px) 500px,
-          (max-width: 700px) 800px,
-    (max-width: 1000px) 1000px,
-    1300px
+          100vw
   '
         />
       </ImageContainer>
