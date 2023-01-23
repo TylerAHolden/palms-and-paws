@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
 
+import { AllStaffSlider } from './AllStaffSlider';
 import { Button } from './Buttons';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -284,6 +285,36 @@ const staffMembers = [
     img1Src: '/images/clara-image-1.jpg',
     img2Src: '/images/clara-image-2.jpg',
   },
+  {
+    name: 'Samantha Fahmi',
+    title: 'Lead Client Service Coordinator',
+    bio: (
+      <>
+        <p>
+          Samantha has always had a deep affinity for animals. When she was a
+          child she was raised with four cats, as she got older she acquired
+          bearded dragons, a king black snake, a boa, tarantula, a couple dogs
+          and a few goldfish—her love of animals started at an early age. After
+          graduating high school, she got the opportunity to work at one of the
+          top emergency clinics in Los Angeles where her passion for animal and
+          client care grew. Working as a supervisor of the front desk of a busy
+          animal hospital she knew she was born to be a leader. Being able to
+          assist and guide doctors, techs, front desk staff, and clients beings
+          her joy. After 15 years of being in the field she recently decided to
+          start taking courses in business and management to eventually obtain
+          her CVPM (certified veterinary practice manager) as well as expand her
+          knowledge on starting and operating a business. Samantha is an LA
+          girl, born in Santa Monica, raised in Culver City, she is currently
+          living in the heart of Los Angeles with her husband and pittie Dodger.
+          In her free time she enjoys traveling, crafting and cooking a variety
+          of dishes. She also enjoys planning and hosting gatherings as a
+          certified wedding and event planner.
+        </p>
+      </>
+    ),
+    img1Src: '/images/samantha-image-1.jpg',
+    img2Src: '/images/samantha-image-2.jpg',
+  },
 ];
 
 export const MeetStaffSlider: React.FC<Props> = () => {
@@ -312,90 +343,93 @@ export const MeetStaffSlider: React.FC<Props> = () => {
   };
 
   return (
-    <Container>
-      <AnimatePresence initial={false} mode='wait' custom={direction}>
-        <MotionDiv
-          position='relative'
-          key={page}
-          custom={direction}
-          variants={variants}
-          initial='enter'
-          animate='center'
-          exit='exit'
-          transition={{
-            x: {
-              type: 'spring',
-              stiffness: 200,
-              damping: 30,
-            },
-            opacity: { duration: 0.2 },
-          }}
-          drag='x'
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(_e: any, { offset, velocity }: any) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        >
-          <StaffPicture>
-            <Image
-              src={staffMembers[index].img1Src}
-              alt={staffMembers[index].name}
-              fill
-              sizes='340px'
-              className={showImageNumber === 1 ? '' : 'hide'}
-            />
-            <Image
-              src={staffMembers[index].img2Src}
-              alt={staffMembers[index].name}
-              fill
-              sizes='340px'
-              className={showImageNumber === 2 ? '' : 'hide'}
-            />
-            <ToggleButtonsContainer>
-              <ToggleButton
-                className={showImageNumber === 1 ? 'active' : ''}
-                onClick={() => setShowImageNumber(1)}
+    <>
+      <Container>
+        <AnimatePresence initial={false} mode='wait' custom={direction}>
+          <MotionDiv
+            position='relative'
+            key={page}
+            custom={direction}
+            variants={variants}
+            initial='enter'
+            animate='center'
+            exit='exit'
+            transition={{
+              x: {
+                type: 'spring',
+                stiffness: 200,
+                damping: 30,
+              },
+              opacity: { duration: 0.2 },
+            }}
+            drag='x'
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={1}
+            onDragEnd={(_e: any, { offset, velocity }: any) => {
+              const swipe = swipePower(offset.x, velocity.x);
+              if (swipe < -swipeConfidenceThreshold) {
+                paginate(1);
+              } else if (swipe > swipeConfidenceThreshold) {
+                paginate(-1);
+              }
+            }}
+          >
+            <StaffPicture>
+              <Image
+                src={staffMembers[index].img1Src}
+                alt={staffMembers[index].name}
+                fill
+                sizes='340px'
+                className={showImageNumber === 1 ? '' : 'hide'}
               />
-              <ToggleButton
-                className={showImageNumber === 2 ? 'active' : ''}
-                onClick={() => setShowImageNumber(2)}
+              <Image
+                src={staffMembers[index].img2Src}
+                alt={staffMembers[index].name}
+                fill
+                sizes='340px'
+                className={showImageNumber === 2 ? '' : 'hide'}
               />
-            </ToggleButtonsContainer>
-          </StaffPicture>
-          <StaffContent>
-            <SliderButtonsContainer>
-              <SliderButton onClick={() => paginate(-1)}>
-                <Image
-                  src='/svg/SliderArrow_white.svg'
-                  alt='Previous'
-                  width={39}
-                  height={39}
+              <ToggleButtonsContainer>
+                <ToggleButton
+                  className={showImageNumber === 1 ? 'active' : ''}
+                  onClick={() => setShowImageNumber(1)}
                 />
-              </SliderButton>
-              <SliderButton onClick={() => paginate(1)}>
-                <Image
-                  src='/svg/SliderArrow_white.svg'
-                  alt='Next'
-                  width={39}
-                  height={39}
+                <ToggleButton
+                  className={showImageNumber === 2 ? 'active' : ''}
+                  onClick={() => setShowImageNumber(2)}
                 />
-              </SliderButton>
-            </SliderButtonsContainer>
-            <h2>{staffMembers[index].name}</h2>
-            <h4>{staffMembers[index].title}</h4>
-            {staffMembers[index].bio}
-          </StaffContent>
-          <MeetStaffLink>
-            <Link href='/our-people'>Meet our People</Link>
-          </MeetStaffLink>
-        </MotionDiv>
-      </AnimatePresence>
-    </Container>
+              </ToggleButtonsContainer>
+            </StaffPicture>
+            <StaffContent>
+              <SliderButtonsContainer>
+                <SliderButton onClick={() => paginate(-1)}>
+                  <Image
+                    src='/svg/SliderArrow_white.svg'
+                    alt='Previous'
+                    width={39}
+                    height={39}
+                  />
+                </SliderButton>
+                <SliderButton onClick={() => paginate(1)}>
+                  <Image
+                    src='/svg/SliderArrow_white.svg'
+                    alt='Next'
+                    width={39}
+                    height={39}
+                  />
+                </SliderButton>
+              </SliderButtonsContainer>
+              <h2>{staffMembers[index].name}</h2>
+              <h4>{staffMembers[index].title}</h4>
+              {staffMembers[index].bio}
+            </StaffContent>
+            <MeetStaffLink>
+              <Link href='/our-people'>Meet our People</Link>
+            </MeetStaffLink>
+          </MotionDiv>
+        </AnimatePresence>
+      </Container>
+      <AllStaffSlider />
+    </>
   );
 };
