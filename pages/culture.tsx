@@ -85,12 +85,12 @@ export default function Culture() {
           </h1>
         </HeroTextContainer>
         <HeroImageContainer
-          ar='1336 / 1045'
+          ar='1401 / 1510'
           className={imageIsLoaded ? 'loaded' : ''}
         >
           <Image
             priority
-            src='/images/culture-header-image.jpg'
+            src='/images/culture-header-image.png'
             alt='Palms and Paws Header Image'
             fill
             sizes='(max-width: 900px) 100vw, 50vw'

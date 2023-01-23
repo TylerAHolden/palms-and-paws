@@ -51,7 +51,7 @@ export const CultureBeyondSection: React.FC = () => (
     <InnerContent>
       <ImageContainer>
         <Image
-          src='/images/culture-image.jpg'
+          src='/images/culture-image.png'
           alt='dog running on beach'
           fill
           sizes='
