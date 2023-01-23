@@ -32,7 +32,7 @@ export default function Services() {
             src='/images/services-header.jpg'
             alt='veterinarian and doctor treating dog'
             fill
-            sizes='(max-width: 900px) 50vw, 25vw'
+            sizes='(max-width: 900px) 100vw, 50vw'
             onLoad={(event) => {
               const target = event.target as any;
 
