@@ -90,11 +90,11 @@ export default function Culture() {
         >
           <Image
             priority
-            quality={85}
             src='/images/culture-header-image.jpg'
             alt='Palms and Paws Header Image'
             fill
             sizes='(max-width: 900px) 100vw, 50vw'
+            quality={85}
             onLoad={(event) => {
               const target = event.target as any;
 
