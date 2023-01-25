@@ -46,24 +46,24 @@ const Heading = styled('h2')`
   }
 `;
 
-export const CultureBeyondSection: React.FC = () => (
-  <Container>
-    <InnerContent>
-      <ImageContainer>
-        <Image
-          src='/images/culture-image.png'
-          alt='dog running on beach'
-          fill
-          sizes='
-          100vw
-  '
-        />
-      </ImageContainer>
-      <Heading>
-        Culture <i>beyond</i>
-        <br />
-        the waiting room.
-      </Heading>
-    </InnerContent>
-  </Container>
-);
+export const CultureBeyondSection: React.FC = () => {
+  return (
+    <Container>
+      <InnerContent>
+        <ImageContainer>
+          <Image
+            src='/images/culture-image.png'
+            alt='dog running on beach'
+            fill
+            sizes='100vw'
+          />
+        </ImageContainer>
+        <Heading>
+          Culture <i>beyond</i>
+          <br />
+          the waiting room.
+        </Heading>
+      </InnerContent>
+    </Container>
+  );
+};

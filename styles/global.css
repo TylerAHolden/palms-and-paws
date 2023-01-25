@@ -57,6 +57,38 @@ body {
   --font-family-serif: 'Argent CF', 'Georgia', serif;
   --border-radius: 22px;
   --page-side-padding: 50px;
+  --yarl__color_backdrop: rgba(255, 255, 255, 0.568);
+  --yarl__thumbnails_thumbnail_border: 2px solid rgba(0, 0, 0, 0.113);
+  --yarl__thumbnails_thumbnail_active_border_color: var(--blue);
+}
+
+.yarl__slide img {
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(14, 22, 32, 0.228),
+    0 20px 18px -20px rgba(14, 22, 32, 0.228);
+}
+
+.yarl__thumbnails_thumbnail {
+  background: transparent !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.yarl__container {
+  overflow: visible !important;
+}
+
+.yarl__thumbnails_wrapper {
+  z-index: 10;
+}
+
+.yarl__button {
+  filter: none !important;
+  color: black !important;
+}
+
+.yarl__portal {
+  backdrop-filter: blur(20px);
 }
 
 .grecaptcha-badge {
