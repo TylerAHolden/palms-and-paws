@@ -121,6 +121,11 @@ export const MobileMenu = ({
         </Link>
       </motion.li>
       <motion.li variants={menuLinkVariants}>
+        <Link href={'/contact'} onClick={closeMenu}>
+          Contact
+        </Link>
+      </motion.li>
+      <motion.li variants={menuLinkVariants}>
         <PetPortalButton
           href={PET_PORTAL_LINK}
           target='_blank'

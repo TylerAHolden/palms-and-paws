@@ -294,6 +294,15 @@ export const Footer: React.FC<Props> = () => {
                 </a>
               </ListItem>
             </FooterListContainer>
+            <FooterListContainer>
+              <ListTitle>Hours</ListTitle>
+              <ListItem>
+                <span>Mon - Fri: 8:00 AM to 4:30 PM</span>
+              </ListItem>
+              <ListItem>
+                <span>Sat & Sun: Coming Soon</span>
+              </ListItem>
+            </FooterListContainer>
           </AddressAndContact>
           <LinksContainer>
             <FooterListContainer>
