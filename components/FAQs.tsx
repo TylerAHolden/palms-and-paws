@@ -84,7 +84,7 @@ const FAQList = [
     answer: (
       <>
         <p>Monday through Friday 8:00 AM to 4:30 PM</p>
-        <p>Saturday & Sunday, 8:00 AM to 4:00 PM</p>
+        <p>Saturday & Sunday, Coming soon!</p>
       </>
     ),
   },

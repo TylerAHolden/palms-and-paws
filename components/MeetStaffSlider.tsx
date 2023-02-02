@@ -3,9 +3,11 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { AllStaffSlider } from './AllStaffSlider';
 import { Button } from './Buttons';
+import { Button as Button2 } from './Button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { styled } from 'goober';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { wrap } from 'popmotion';
 
 type Props = {};
@@ -13,6 +15,8 @@ type Props = {};
 const Container = styled('div')`
   position: relative;
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   padding-top: 70px;
   padding-bottom: 70px;
   background: linear-gradient(
@@ -134,6 +138,8 @@ const StaffPicture = styled('div')`
   }
   @media (max-width: 947px) {
     margin-right: 0px;
+    margin-bottom: 20px;
+    order: 1;
   }
 
   @media (max-width: 400px) {
@@ -168,9 +174,7 @@ const StaffContent = styled('div')`
     order: -1;
     width: auto;
     padding-bottom: 20px;
-    p {
-      display: none;
-    }
+    order: 2;
   }
   @media (max-width: 400px) {
     width: 100%;
@@ -192,6 +196,14 @@ const SliderButton = styled(Button)`
   }
 `;
 
+const ReadMoreButton = styled(Button2)`
+  display: none;
+  margin-left: -20px;
+  @media (max-width: 947px) {
+    display: flex;
+  }
+`;
+
 const SliderButtonsContainer = styled('div')`
   display: flex;
   align-items: center;
@@ -204,7 +216,9 @@ const MeetStaffLink = styled('div')`
   width: 340px;
   display: none;
   @media (max-width: 947px) {
-    display: block;
+    display: flex;
+    order: 3;
+    align-self: flex-start;
   }
   @media (max-width: 400px) {
     width: 100%;
@@ -218,6 +232,13 @@ const MeetStaffLink = styled('div')`
   }
 `;
 
+function truncateString(str: string, num: number) {
+  if (str.length <= num) {
+    return str;
+  }
+  return str.slice(0, num) + '...';
+}
+
 const swipeConfidenceThreshold = 10000;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
@@ -227,91 +248,22 @@ const staffMembers = [
   {
     name: 'Kevin McEvilly, DVM',
     title: 'Chief of Staff, COO',
-    bio: (
-      <>
-        <p>
-          At the age of 7, his love of animals and people alike led him to the
-          decision that he was going to become a veterinarian— he never changed
-          his mind. After completing a double major at Cal Poly San Luis Obispo,
-          Kevin went on to earn his doctorate in veterinary medicine at Western
-          University of Health Sciences. Following graduation, Kevin interned in
-          medicine and surgery at the Animal Specialty and Emergency Center
-          where he stayed on to train subsequent classes of interns before
-          following his passion into primary care.
-        </p>
-        <p>
-          Growth and innovation are constant drives to advance the quality of
-          medicine and patient and pet parent experiences alike. Leadership
-          development through an others-oriented approach is central to his
-          operating style – investing in others is how we change the world.
-          Mentoring interns and veterinary students, and seeing them grow has
-          been a been a great source of joy. Beyond the stethoscope, he is
-          passionate about his family and friends, he loves dogs, his rescued
-          three-legged cat, and exploring new places and cultures with his
-          favorite people.
-        </p>
-      </>
-    ),
+    bio: `At the age of 7, his love of animals and people alike led him to the decision that he was going to become a veterinarian— he never changed his mind. After completing a double major at Cal Poly San Luis Obispo, Kevin went on to earn his doctorate in veterinary medicine at Western University of Health Sciences. Following graduation, Kevin interned in medicine and surgery at the Animal Specialty and Emergency Center where he stayed on to train subsequent classes of interns before following his passion into primary care.
+    \n Growth and innovation are constant drives to advance the quality of medicine and patient and pet parent experiences alike. Leadership development through an others-oriented approach is central to his operating style – investing in others is how we change the world. Mentoring interns and veterinary students, and seeing them grow has been a been a great source of joy. Beyond the stethoscope, he is passionate about his family and friends, he loves dogs, his rescued three-legged cat, and exploring new places and cultures with his favorite people.`,
     img1Src: '/images/kevin-image-1.jpg',
     img2Src: '/images/kevin-image-2.jpg',
   },
   {
     name: 'Clara Pelton RVT, BS, CVPM',
     title: 'Practice Manager',
-    bio: (
-      <>
-        <p>
-          Clara Pelton RVT, BS, CVPM is a Southern California native who has a
-          lifelong affinity for helping animals. She started her career in
-          veterinary medicine as a kennel assistant before attending Cal Poly
-          Pomona and graduating with a degree in Microbiology. After graduation,
-          Clara continued her work in the veterinary industry focusing on
-          emergency and critical care, earning her Registered Veterinary
-          Technician license. Inspired and fueled by her experience, Clara was
-          published in NAVTA magazine for an article called, &quot;Fluid
-          Therapy: A Technician&apos;s Role&quot;, catapulting her into
-          education and mentorship within the industry. Clara comes to Paws and
-          Palms with 8 years of experience managing 24-hour emergency and
-          specialty hospitals as well as her experience as CEO and founder of a
-          veterinary consulting firm. Her vision is to educate, train and mentor
-          members of the veterinary community, from hospital staff and doctors,
-          to the pet parents and is excited to build out these principals at
-          Paws and Palms. Clara resides in Ventura County with her husband, son,
-          3 cats and tripod dog where she enjoys traveling, food/wine and
-          spending quality time with her friends and family.
-        </p>
-      </>
-    ),
+    bio: `Clara Pelton RVT, BS, CVPM is a Southern California native who has a lifelong affinity for helping animals. She started her career in veterinary medicine as a kennel assistant before attending Cal Poly Pomona and graduating with a degree in Microbiology. After graduation, Clara continued her work in the veterinary industry focusing on emergency and critical care, earning her Registered Veterinary Technician license. Inspired and fueled by her experience, Clara was published in NAVTA magazine for an article called, &quot;Fluid Therapy: A Technician&apos;s Role&quot;, catapulting her into education and mentorship within the industry. Clara comes to Paws and Palms with 8 years of experience managing 24-hour emergency and specialty hospitals as well as her experience as CEO and founder of a veterinary consulting firm. Her vision is to educate, train and mentor members of the veterinary community, from hospital staff and doctors, to the pet parents and is excited to build out these principals at Paws and Palms. Clara resides in Ventura County with her husband, son, 3 cats and tripod dog where she enjoys traveling, food/wine and spending quality time with her friends and family.`,
     img1Src: '/images/clara-image-1.jpg',
     img2Src: '/images/clara-image-2.jpg',
   },
   {
     name: 'Samantha Fahmi',
     title: 'Lead Client Service Coordinator',
-    bio: (
-      <>
-        <p>
-          Samantha has always had a deep affinity for animals. When she was a
-          child she was raised with four cats, as she got older she acquired
-          bearded dragons, a king black snake, a boa, tarantula, a couple dogs
-          and a few goldfish—her love of animals started at an early age. After
-          graduating high school, she got the opportunity to work at one of the
-          top emergency clinics in Los Angeles where her passion for animal and
-          client care grew. Working as a supervisor of the front desk of a busy
-          animal hospital she knew she was born to be a leader. Being able to
-          assist and guide doctors, techs, front desk staff, and clients beings
-          her joy. After 15 years of being in the field she recently decided to
-          start taking courses in business and management to eventually obtain
-          her CVPM (certified veterinary practice manager) as well as expand her
-          knowledge on starting and operating a business. Samantha is an LA
-          girl, born in Santa Monica, raised in Culver City, she is currently
-          living in the heart of Los Angeles with her husband and pittie Dodger.
-          In her free time she enjoys traveling, crafting and cooking a variety
-          of dishes. She also enjoys planning and hosting gatherings as a
-          certified wedding and event planner.
-        </p>
-      </>
-    ),
+    bio: `Samantha has always had a deep affinity for animals. When she was a child she was raised with four cats, as she got older she acquired bearded dragons, a king black snake, a boa, tarantula, a couple dogs and a few goldfish—her love of animals started at an early age. After graduating high school, she got the opportunity to work at one of the top emergency clinics in Los Angeles where her passion for animal and client care grew. Working as a supervisor of the front desk of a busy animal hospital she knew she was born to be a leader. Being able to assist and guide doctors, techs, front desk staff, and clients beings her joy. After 15 years of being in the field she recently decided to start taking courses in business and management to eventually obtain her CVPM (certified veterinary practice manager) as well as expand her knowledge on starting and operating a business. Samantha is an LA girl, born in Santa Monica, raised in Culver City, she is currently living in the heart of Los Angeles with her husband and pittie Dodger. In her free time she enjoys traveling, crafting and cooking a variety of dishes. She also enjoys planning and hosting gatherings as a certified wedding and event planner.`,
     img1Src: '/images/samantha-image-1.jpg',
     img2Src: '/images/samantha-image-2.jpg',
   },
@@ -320,7 +272,9 @@ const staffMembers = [
 export const MeetStaffSlider: React.FC<Props> = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [showImageNumber, setShowImageNumber] = useState(1);
+  const [showAllBio, setShowAllBio] = useState(false);
   const timeout = useRef<NodeJS.Timeout | null>(null);
+  const smallScreen = useMediaQuery('(max-width: 974px)');
 
   useEffect(() => {
     if (timeout.current) {
@@ -340,6 +294,10 @@ export const MeetStaffSlider: React.FC<Props> = () => {
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
+  };
+
+  const handleToggleReadMore = () => {
+    setShowAllBio(!showAllBio);
   };
 
   return (
@@ -421,7 +379,17 @@ export const MeetStaffSlider: React.FC<Props> = () => {
               </SliderButtonsContainer>
               <h2>{staffMembers[index].name}</h2>
               <h4>{staffMembers[index].title}</h4>
-              {staffMembers[index].bio}
+              {(!smallScreen || showAllBio
+                ? staffMembers[index].bio
+                : truncateString(staffMembers[index].bio, 400)
+              )
+                .split('\n')
+                .map((str, i) => (
+                  <p key={i}>{str}</p>
+                ))}
+              <ReadMoreButton buttonStyle='blue' onClick={handleToggleReadMore}>
+                {showAllBio ? 'Read Less' : 'Read More'}
+              </ReadMoreButton>
             </StaffContent>
             <MeetStaffLink>
               <Link href='/our-people'>Meet our People</Link>

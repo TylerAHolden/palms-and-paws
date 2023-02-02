@@ -198,9 +198,13 @@ const AddressAndContact = styled('div')`
   @media (max-width: 800px) {
     order: 2;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    ${FooterListContainer} {
+      width: 50%;
+    }
   }
   @media (max-width: 450px) {
     flex-direction: column;
@@ -292,6 +296,15 @@ export const Footer: React.FC<Props> = () => {
                 <a href='mailto:hello@palmspawsvet.com'>
                   hello@palmspawsvet.com
                 </a>
+              </ListItem>
+            </FooterListContainer>
+            <FooterListContainer>
+              <ListTitle>Hours</ListTitle>
+              <ListItem>
+                <span>Mon - Fri: 8:00 AM to 4:30 PM</span>
+              </ListItem>
+              <ListItem>
+                <span>Sat & Sun: Coming Soon</span>
               </ListItem>
             </FooterListContainer>
           </AddressAndContact>

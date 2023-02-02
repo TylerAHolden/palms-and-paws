@@ -110,6 +110,14 @@ const StyledButton = styled('a')<any>`
       opacity: 0.8;
     }
   }
+
+  &.blue {
+    background: var(--blue);
+    color: white;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 `;
 
 export const Button: React.FC<Props> = ({

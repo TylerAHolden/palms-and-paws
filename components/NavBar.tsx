@@ -36,6 +36,29 @@ const NavBarContainer = styled('div')`
   }
 `;
 
+const AnnouncementBar = styled('div')`
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px -20px;
+  margin-top: -20px;
+  padding: 7px;
+  padding-top: 10px;
+  p {
+    color: white;
+    font-weight: 700;
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
+    margin-top: -3px;
+    small {
+      font-weight: 400;
+    }
+  }
+`;
+
 const NavbarInnerContainer = styled('div')`
   width: 100%;
   max-width: 1500px;
@@ -215,6 +238,14 @@ export const NavBar: React.FC<Props> = () => {
 
   return (
     <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
+      <AnnouncementBar>
+        <p>
+          <span role='img'>🗓</span> Same Day Appointments Available
+        </p>
+        <p>
+          <small>Saturday and Sunday availability coming soon</small>
+        </p>
+      </AnnouncementBar>
       <NavbarInnerContainer>
         <MobileSpacer />
         <NavbarLinksContainer className='left'>
