@@ -7,6 +7,7 @@ import { Button as Button2 } from './Button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { styled } from 'goober';
+import useMediaQuery from '../hooks/useMediaQuery';
 import { wrap } from 'popmotion';
 
 type Props = {};
@@ -273,6 +274,7 @@ export const MeetStaffSlider: React.FC<Props> = () => {
   const [showImageNumber, setShowImageNumber] = useState(1);
   const [showAllBio, setShowAllBio] = useState(false);
   const timeout = useRef<NodeJS.Timeout | null>(null);
+  const smallScreen = useMediaQuery('(max-width: 974px)');
 
   useEffect(() => {
     if (timeout.current) {
@@ -377,7 +379,7 @@ export const MeetStaffSlider: React.FC<Props> = () => {
               </SliderButtonsContainer>
               <h2>{staffMembers[index].name}</h2>
               <h4>{staffMembers[index].title}</h4>
-              {(showAllBio
+              {(!smallScreen || showAllBio
                 ? staffMembers[index].bio
                 : truncateString(staffMembers[index].bio, 400)
               )
