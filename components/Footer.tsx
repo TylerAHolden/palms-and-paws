@@ -198,9 +198,13 @@ const AddressAndContact = styled('div')`
   @media (max-width: 800px) {
     order: 2;
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    ${FooterListContainer} {
+      width: 50%;
+    }
   }
   @media (max-width: 450px) {
     flex-direction: column;
