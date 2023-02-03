@@ -46,7 +46,8 @@ const AnnouncementBar = styled('div')`
   margin-top: -20px;
   padding: 7px;
   padding-top: 10px;
-  p {
+  p,
+  a {
     color: white;
     font-weight: 700;
     margin: 0;
@@ -56,6 +57,9 @@ const AnnouncementBar = styled('div')`
     small {
       font-weight: 400;
     }
+  }
+  strong p {
+    padding-top: 3px;
   }
 `;
 
@@ -239,9 +243,12 @@ export const NavBar: React.FC<Props> = () => {
   return (
     <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
       <AnnouncementBar>
-        <p>
-          <span role='img'>🗓</span> Same Day Appointments Available
-        </p>
+        <p>Same Day Appointments Available</p>
+        <strong>
+          <p>
+            <a href='tel:tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
+          </p>
+        </strong>
         <p>
           <small>Saturday and Sunday availability coming soon</small>
         </p>
