@@ -246,7 +246,7 @@ export const NavBar: React.FC<Props> = () => {
         <p>Same Day Appointments Available</p>
         <strong>
           <p>
-            <a href='tel:tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
+            <a href='tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
           </p>
         </strong>
         <p>
