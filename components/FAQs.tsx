@@ -83,8 +83,12 @@ const FAQList = [
     question: <p>What are your hours?</p>,
     answer: (
       <>
-        <p>Monday through Friday 8:00 AM to 4:30 PM</p>
-        <p>Saturday & Sunday, Coming soon!</p>
+        <p>Monday through Friday 8:00 AM to 6:00 PM</p>
+        <p>
+          Each Wednesday between 12:00 PM - 2:00 PM we are closed for hospital
+          rounds
+        </p>
+        <p>Saturday & Sunday 8:00 AM - 4:00 PM</p>
       </>
     ),
   },
@@ -141,10 +145,10 @@ const FAQList = [
     question: <p>Does Palms and Paws require a membership?</p>,
     answer: (
       <p>
-        All are welcome, no membership required! We do offer care plans for
-        puppies & kittens, young to middle aged dogs and cats, as well as
-        geriatric dogs and cats, please schedule an appointment or ask our
-        client service coordinators to learn more.
+        All are welcome, no membership required! We do plan on offering care
+        plans in the near future for puppies & kittens, young to middle aged
+        dogs and cats, as well as geriatric dogs and cats, please schedule an
+        appointment or ask our client service coordinators to learn more.
       </p>
     ),
   },

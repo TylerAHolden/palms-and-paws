@@ -250,7 +250,7 @@ export const NavBar: React.FC<Props> = () => {
           </p>
         </strong>
         <p>
-          <small>Saturday and Sunday availability coming soon</small>
+          <small>Open 7 days a week!</small>
         </p>
       </AnnouncementBar>
       <NavbarInnerContainer>

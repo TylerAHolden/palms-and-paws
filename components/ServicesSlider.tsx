@@ -15,7 +15,7 @@ const Slide = styled('div')`
   align-items: stretch;
   width: 320px;
   background: var(--blue);
-  border-radius: var(--border-radius);\
+  border-radius: var(--border-radius);
   margin: 0 10px;
   padding: 40px 30px;
   height: 540px;
@@ -60,7 +60,6 @@ const Slide = styled('div')`
       min-width: 300px;
     }
   }
- 
 `;
 
 const ITEMS = [

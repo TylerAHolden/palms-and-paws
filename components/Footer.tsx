@@ -208,6 +208,9 @@ const AddressAndContact = styled('div')`
   }
   @media (max-width: 450px) {
     flex-direction: column;
+    ${FooterListContainer} {
+      width: 100%;
+    }
   }
 `;
 
@@ -301,10 +304,16 @@ export const Footer: React.FC<Props> = () => {
             <FooterListContainer>
               <ListTitle>Hours</ListTitle>
               <ListItem>
-                <span>Mon - Fri: 8:00 AM to 4:30 PM</span>
+                <span>Monday - Friday: 8:00 AM to 6:00 PM</span>
               </ListItem>
               <ListItem>
-                <span>Sat & Sun: Coming Soon</span>
+                <span>
+                  Each Wednesday between 12:00 PM - 2:00 PM we are closed for
+                  hospital rounds
+                </span>
+              </ListItem>
+              <ListItem>
+                <span>Saturday & Sunday: 8:00 AM to 4:00 PM</span>
               </ListItem>
             </FooterListContainer>
           </AddressAndContact>
