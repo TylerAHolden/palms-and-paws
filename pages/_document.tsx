@@ -43,8 +43,8 @@ class Document extends NextDocument<Props> {
           />
           <link rel='manifest' href='/site.webmanifest' />
           <meta name='msapplication-config' content='/browserconfig.xml' />
-          <meta name='msapplication-TileColor' content='ffffff' />
-          <meta name='theme-color' content='ffffff' />
+          <meta name='msapplication-TileColor' content='#ffffff' />
+          <meta name='theme-color' content='#ffffff' />
           <style
             id={'_goober'}
             // And defined it in here

@@ -2,11 +2,9 @@ import { ValidationError, useForm } from '@formspree/react';
 import { useEffect, useState } from 'react';
 
 import { Button } from '../components/Buttons';
-import Head from 'next/head';
 import Layout from '../components/Layout';
+import Script from 'next/script';
 import { styled } from 'goober';
-
-declare var grecaptcha: any;
 
 const ContactSection = styled('section')`
   background: var(--green);
@@ -146,7 +144,7 @@ const HELP_CATEGORIES = [
 
 export default function Services() {
   const [helpCategory, setHelpCategory] =
-    useState<typeof HELP_CATEGORIES[number]>('Scheduling');
+    useState<(typeof HELP_CATEGORIES)[number]>('Scheduling');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -154,7 +152,9 @@ export default function Services() {
   const [state, handleSubmit] = useForm('mnqyaqqk');
 
   useEffect(() => {
-    if (!grecaptcha) return;
+    const isServerSide = typeof window === 'undefined';
+    if (isServerSide || !(window as any).grecaptcha) return;
+    const grecaptcha = (window as any).grecaptcha;
     grecaptcha.ready(function () {
       if (!grecaptcha) return;
       grecaptcha
@@ -173,13 +173,11 @@ export default function Services() {
 
   return (
     <Layout title='Contact' description={`${title} - ${subtitle}`}>
-      <Head>
-        <script
-          defer
-          src='https://www.google.com/recaptcha/api.js?render=6Lcnk4EjAAAAAH-qYiQMiHQJhsWy9NcdQ9nvyJ-Q'
-          async
-        />
-      </Head>
+      <Script
+        defer
+        src='https://www.google.com/recaptcha/api.js?render=6Lcnk4EjAAAAAH-qYiQMiHQJhsWy9NcdQ9nvyJ-Q'
+        async
+      />
       <ContactSection>
         <ContactSectionInner>
           <ContactHeader>

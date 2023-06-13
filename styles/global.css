@@ -281,3 +281,13 @@ li.menu-logo {
   position: relative;
   aspect-ratio: 282 / 40;
 }
+
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
