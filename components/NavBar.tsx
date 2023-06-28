@@ -55,7 +55,6 @@ const AnnouncementBar = styled('div')`
     text-align: center;
     margin-top: -3px;
     small {
-      font-weight: 400;
     }
   }
   strong p {
@@ -243,15 +242,14 @@ export const NavBar: React.FC<Props> = () => {
   return (
     <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
       <AnnouncementBar>
-        <p>Same Day Appointments Available</p>
         <strong>
           <p>
             <a href='tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
           </p>
+          <p>
+            <small>Open 7 days a week!</small>
+          </p>
         </strong>
-        <p>
-          <small>Open 7 days a week!</small>
-        </p>
       </AnnouncementBar>
       <NavbarInnerContainer>
         <MobileSpacer />

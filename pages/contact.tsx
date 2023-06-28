@@ -1,5 +1,5 @@
 import { ValidationError, useForm } from '@formspree/react';
-import { useEffect, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { Button } from '../components/Buttons';
 import Layout from '../components/Layout';
@@ -150,26 +150,30 @@ export default function Services() {
   const [message, setMessage] = useState('');
 
   const [state, handleSubmit] = useForm('mnqyaqqk');
+  const recaptchaRef = useRef<string>();
 
-  useEffect(() => {
+  const tryRecaptcha = () => {
+    if (recaptchaRef.current) return;
     const isServerSide = typeof window === 'undefined';
     if (isServerSide || !(window as any).grecaptcha) return;
     const grecaptcha = (window as any).grecaptcha;
     grecaptcha.ready(function () {
       if (!grecaptcha) return;
+      recaptchaRef.current = 'loading';
       grecaptcha
         ?.execute('6Lcnk4EjAAAAAH-qYiQMiHQJhsWy9NcdQ9nvyJ-Q', {
           action: 'submit',
         })
         .then(function (token: string) {
-          console.info('got token: ' + token);
+          // console.info('got token: ' + token);
           const input = document.getElementById('g-recaptcha-response');
           if (input) {
             input.setAttribute('value', token);
+            recaptchaRef.current = 'done';
           }
         });
     });
-  }, []);
+  };
 
   return (
     <Layout title='Contact' description={`${title} - ${subtitle}`}>
@@ -238,6 +242,7 @@ export default function Services() {
                   type='text'
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  onFocus={tryRecaptcha}
                 />
                 <label htmlFor='email'>Email Address</label>
                 <input
@@ -246,6 +251,7 @@ export default function Services() {
                   type='email'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onFocus={tryRecaptcha}
                 />
                 <ValidationError
                   prefix='Email'
@@ -259,6 +265,7 @@ export default function Services() {
                   rows={4}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  onFocus={tryRecaptcha}
                 />
                 <ValidationError
                   prefix='Message'
