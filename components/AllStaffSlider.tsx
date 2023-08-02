@@ -61,11 +61,11 @@ const ITEMS = [
     title: 'Client Service Coordinator',
     img: '/images/staff/Margaret.jpg',
   },
-  {
-    name: 'Samantha',
-    title: 'Lead Client Service Coordinator',
-    img: '/images/staff/Samantha.jpg',
-  },
+  // {
+  //   name: 'Samantha',
+  //   title: 'Lead Client Service Coordinator',
+  //   img: '/images/staff/Samantha.jpg',
+  // },
   {
     name: 'Kendria',
     title: 'Kennel Attendant',
@@ -76,11 +76,11 @@ const ITEMS = [
     title: 'Registered Veterinary Technician',
     img: '/images/staff/Steven.jpg',
   },
-  {
-    name: 'Hasina',
-    title: 'Client Service Coordinator',
-    img: '/images/staff/Hasina.jpg',
-  },
+  // {
+  //   name: 'Hasina',
+  //   title: 'Client Service Coordinator',
+  //   img: '/images/staff/Hasina.jpg',
+  // },
   {
     name: 'Ana',
     title: 'Veterinary Assistant',

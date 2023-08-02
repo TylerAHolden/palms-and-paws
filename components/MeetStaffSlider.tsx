@@ -260,13 +260,13 @@ const staffMembers = [
     img1Src: '/images/clara-image-1.jpg',
     img2Src: '/images/clara-image-2.jpg',
   },
-  {
-    name: 'Samantha Fahmi',
-    title: 'Lead Client Service Coordinator',
-    bio: `Samantha has always had a deep affinity for animals. When she was a child she was raised with four cats. As she got older she acquired bearded dragons, a king black snake, a boa, tarantula, a couple of dogs, and a few goldfish—her love of animals started at an early age. After graduating high school, she got the opportunity to work at one of the top emergency clinics in Los Angeles, where her passion for animal and client care grew. Working as a supervisor of the front desk of a busy animal hospital she knew she was born to be a leader. Being able to assist and guide doctors, techs, front desk staff, and clients beings her joy. After 15 years of being in the field she recently decided to start taking courses in business and management to eventually obtain her CVPM, (certified veterinary practice manager), as well as expand her knowledge on starting and operating a business. Samantha is an LA girl, born in Santa Monica, raised in Culver City, she is currently living in the heart of Los Angeles with her husband and pittie Dodger. In her free time she enjoys traveling, crafting and cooking a variety of dishes. She also enjoys planning and hosting gatherings as a certified wedding and event planner.`,
-    img1Src: '/images/samantha-image-1.jpg',
-    img2Src: '/images/samantha-image-2.jpg',
-  },
+  // {
+  //   name: 'Samantha Fahmi',
+  //   title: 'Lead Client Service Coordinator',
+  //   bio: `Samantha has always had a deep affinity for animals. When she was a child she was raised with four cats. As she got older she acquired bearded dragons, a king black snake, a boa, tarantula, a couple of dogs, and a few goldfish—her love of animals started at an early age. After graduating high school, she got the opportunity to work at one of the top emergency clinics in Los Angeles, where her passion for animal and client care grew. Working as a supervisor of the front desk of a busy animal hospital she knew she was born to be a leader. Being able to assist and guide doctors, techs, front desk staff, and clients beings her joy. After 15 years of being in the field she recently decided to start taking courses in business and management to eventually obtain her CVPM, (certified veterinary practice manager), as well as expand her knowledge on starting and operating a business. Samantha is an LA girl, born in Santa Monica, raised in Culver City, she is currently living in the heart of Los Angeles with her husband and pittie Dodger. In her free time she enjoys traveling, crafting and cooking a variety of dishes. She also enjoys planning and hosting gatherings as a certified wedding and event planner.`,
+  //   img1Src: '/images/samantha-image-1.jpg',
+  //   img2Src: '/images/samantha-image-2.jpg',
+  // },
 ];
 
 export const MeetStaffSlider: React.FC<Props> = () => {
