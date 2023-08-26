@@ -260,6 +260,24 @@ const staffMembers = [
     img1Src: '/images/clara-image-1.jpg',
     img2Src: '/images/clara-image-2.jpg',
   },
+  {
+    name: 'Phil Ahn, DVM',
+    title: '(Joining October 2023!)',
+    bio: `A native of Los Angeles, Dr. Phil Ahn is proud to be practicing veterinary medicine near his hometown. He has had a passion for animals as a child and believes his early memories with his family's Labrador Retriever and Shih Tzu paved the way for his path to becoming a veterinarian. Dr. Ahn loves the ability to help and heal his patients by collaborating with their owners to form realistic plans and expectations. He finds joy in making a difference in people's lives through their connection with their pets, knowing that they share a very powerful bond.
+ \n
+    Dr. Ahn attended Cal Poly Pomona for his undergraduate education and Western University of Health Sciences for his doctorate of veterinary medicine. His interests include dermatology, dentistry, internal medicine, surgery, preventative medicine, and emergency medicine (not in any particular order). Dr. Ahn has also taken the holistic medicine/acupuncture course at the Chi Institute in Florida and looks for ways to practice integrative medicine. He soon hopes to marry his fiance who is also a veterinarian. Together they share a very sweet, scruffy terrier mix named Poppy and a crotchety, older cat named Ethyl.`,
+    img1Src: '/images/phil-image-1.jpg',
+    img2Src: '/images/phil-image-1.jpg',
+  },
+  {
+    name: 'Jacob Wolf, DVM',
+    title: 'Associate Veterinarian',
+    bio: `Jacob was born and raised in California. Given the last name - he felt that it was his destiny to become a vet. He received a degree in Animal Science at The University of California, Davis where he enjoyed his free time playing on the Men’s Lacrosse Team and coaching lacrosse for local youth. Following undergrad, he had a brief stint in animal nutrition and biotech before enrolling at Western University to receive his Doctor of Veterinary Medicine degree in 2022 where he focused on small animal medicine. After completing a rigorous rotating specialty program at VCA ASEC in Los Angeles - Jacob is excited for the next step in his career.
+ \n
+    These days he lives in Santa Monica and spends most of his time outside of work training to become an elite pickleball player, enjoying spicy noodles, and reading. He remains passionate and enthusiastic for helping pets and people in any way he can through his professional expertise. His current focus is limited to dogs and cats - unfortunately no wolves at this time.`,
+    img1Src: '/images/jacob-image-1.jpg',
+    img2Src: '/images/jacob-image-1.jpg',
+  },
   // {
   //   name: 'Samantha Fahmi',
   //   title: 'Lead Client Service Coordinator',

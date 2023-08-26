@@ -96,11 +96,11 @@ const ITEMS = [
     title: 'Client Service Coordinator',
     img: '/images/staff/Claudia.jpg',
   },
-  {
-    name: 'Emeli',
-    title: 'Kennel Attendant',
-    img: '/images/staff/Emeli.jpg',
-  },
+  // {
+  //   name: 'Emeli',
+  //   title: 'Kennel Attendant',
+  //   img: '/images/staff/Emeli.jpg',
+  // },
   {
     name: 'Grace',
     title: 'Client Service Coordinator',
