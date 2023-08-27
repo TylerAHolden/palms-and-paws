@@ -262,7 +262,7 @@ const staffMembers = [
   },
   {
     name: 'Phil Ahn, DVM',
-    title: '(Joining October 2023!)',
+    title: 'Associate Veterinarian (Joining October 2023!)',
     bio: `A native of Los Angeles, Dr. Phil Ahn is proud to be practicing veterinary medicine near his hometown. He has had a passion for animals as a child and believes his early memories with his family's Labrador Retriever and Shih Tzu paved the way for his path to becoming a veterinarian. Dr. Ahn loves the ability to help and heal his patients by collaborating with their owners to form realistic plans and expectations. He finds joy in making a difference in people's lives through their connection with their pets, knowing that they share a very powerful bond.
  \n
     Dr. Ahn attended Cal Poly Pomona for his undergraduate education and Western University of Health Sciences for his doctorate of veterinary medicine. His interests include dermatology, dentistry, internal medicine, surgery, preventative medicine, and emergency medicine (not in any particular order). Dr. Ahn has also taken the holistic medicine/acupuncture course at the Chi Institute in Florida and looks for ways to practice integrative medicine. He soon hopes to marry his fiance who is also a veterinarian. Together they share a very sweet, scruffy terrier mix named Poppy and a crotchety, older cat named Ethyl.`,
