@@ -13,12 +13,12 @@ import { wrap } from 'popmotion';
 type Props = {};
 
 const Container = styled('div')`
+  padding-top: 70px;
+  padding-bottom: 70px;
   position: relative;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
-  padding-top: 70px;
-  padding-bottom: 70px;
   background: linear-gradient(
       217deg,
       rgba(70, 154, 232, 1),
@@ -31,6 +31,40 @@ const Container = styled('div')`
   @media (max-width: 500px) {
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+`;
+
+const ListItemsContainer = styled('div')`
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+`;
+
+const StaffMemberPreviewItem = styled('div')`
+  cursor: pointer;
+  width: 60px;
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 0px;
+  aspect-ratio: 682 / 820;
+  border: 3px solid transparent;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  transform: scale(0.8);
+  img {
+    border-radius: 10px;
+    object-fit: contain;
+    --shadow-color: 209deg 66% 37%;
+
+    box-shadow: 0px 0.4px 0.5px hsl(var(--shadow-color) / 0.41),
+      -0.1px 6.8px 7.9px -2.3px hsl(var(--shadow-color) / 0.45);
+  }
+
+  &.selected {
+    transform: scale(1.1);
+    border-color: #00000037;
+    background: #00000037;
   }
 `;
 
@@ -204,13 +238,6 @@ const ReadMoreButton = styled(Button2)`
   }
 `;
 
-const SliderButtonsContainer = styled('div')`
-  display: flex;
-  align-items: center;
-  z-index: 1;
-  margin-left: -10px;
-`;
-
 const MeetStaffLink = styled('div')`
   margin-top: 20px;
   width: 340px;
@@ -267,7 +294,7 @@ const staffMembers = [
  \n
     Dr. Ahn attended Cal Poly Pomona for his undergraduate education and Western University of Health Sciences for his doctorate of veterinary medicine. His interests include dermatology, dentistry, internal medicine, surgery, preventative medicine, and emergency medicine (not in any particular order). Dr. Ahn has also taken the holistic medicine/acupuncture course at the Chi Institute in Florida and looks for ways to practice integrative medicine. He soon hopes to marry his fiance who is also a veterinarian. Together they share a very sweet, scruffy terrier mix named Poppy and a crotchety, older cat named Ethyl.`,
     img1Src: '/images/phil-image-1.jpg',
-    img2Src: '/images/phil-image-1.jpg',
+    // img2Src: '/images/phil-image-1.jpg',
   },
   {
     name: 'Jacob Wolf, DVM',
@@ -276,7 +303,7 @@ const staffMembers = [
  \n
     These days he lives in Santa Monica and spends most of his time outside of work training to become an elite pickleball player, enjoying spicy noodles, and reading. He remains passionate and enthusiastic for helping pets and people in any way he can through his professional expertise. His current focus is limited to dogs and cats - unfortunately no wolves at this time.`,
     img1Src: '/images/jacob-image-1.jpg',
-    img2Src: '/images/jacob-image-1.jpg',
+    // img2Src: '/images/jacob-image-1.jpg',
   },
   // {
   //   name: 'Samantha Fahmi',
@@ -299,10 +326,20 @@ export const MeetStaffSlider: React.FC<Props> = () => {
       clearTimeout(timeout.current);
     }
 
-    timeout.current = setTimeout(() => {
-      setShowImageNumber(showImageNumber === 1 ? 2 : 1);
-    }, 10000);
-  }, [showImageNumber]);
+    const index = wrap(0, staffMembers.length, page);
+
+    timeout.current = setTimeout(
+      () => {
+        if (showImageNumber === 2 || !staffMembers[index].img2Src) {
+          setPage([page + 1, 1]);
+          setShowImageNumber(1);
+        } else {
+          setShowImageNumber(showImageNumber === 1 ? 2 : 1);
+        }
+      },
+      staffMembers[index].img2Src ? 3500 : 7000
+    );
+  }, [showImageNumber, page]);
 
   // We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
   // then wrap that within 0-2 to find our image ID in the array below. By passing an
@@ -316,6 +353,10 @@ export const MeetStaffSlider: React.FC<Props> = () => {
 
   const handleToggleReadMore = () => {
     setShowAllBio(!showAllBio);
+  };
+
+  const goToPage = (newPage: number) => {
+    setPage([newPage, 1]);
   };
 
   return (
@@ -335,8 +376,9 @@ export const MeetStaffSlider: React.FC<Props> = () => {
                 type: 'spring',
                 stiffness: 200,
                 damping: 30,
+                duration: 0.15,
               },
-              opacity: { duration: 0.2 },
+              opacity: { duration: 0.15 },
             }}
             drag='x'
             dragConstraints={{ left: 0, right: 0 }}
@@ -356,45 +398,36 @@ export const MeetStaffSlider: React.FC<Props> = () => {
                 alt={staffMembers[index].name}
                 fill
                 sizes='340px'
-                className={showImageNumber === 1 ? '' : 'hide'}
+                className={
+                  !staffMembers[index].img2Src || showImageNumber === 1
+                    ? ''
+                    : 'hide'
+                }
               />
-              <Image
-                src={staffMembers[index].img2Src}
-                alt={staffMembers[index].name}
-                fill
-                sizes='340px'
-                className={showImageNumber === 2 ? '' : 'hide'}
-              />
-              <ToggleButtonsContainer>
-                <ToggleButton
-                  className={showImageNumber === 1 ? 'active' : ''}
-                  onClick={() => setShowImageNumber(1)}
+              {staffMembers[index].img2Src && (
+                <Image
+                  src={staffMembers[index].img2Src as string}
+                  alt={staffMembers[index].name}
+                  fill
+                  sizes='340px'
+                  className={showImageNumber === 2 ? '' : 'hide'}
                 />
-                <ToggleButton
-                  className={showImageNumber === 2 ? 'active' : ''}
-                  onClick={() => setShowImageNumber(2)}
-                />
-              </ToggleButtonsContainer>
+              )}
+              {staffMembers[index].img2Src && (
+                <ToggleButtonsContainer>
+                  <ToggleButton
+                    className={showImageNumber === 1 ? 'active' : ''}
+                    onClick={() => setShowImageNumber(1)}
+                  />
+                  <ToggleButton
+                    className={showImageNumber === 2 ? 'active' : ''}
+                    onClick={() => setShowImageNumber(2)}
+                  />
+                </ToggleButtonsContainer>
+              )}
             </StaffPicture>
+
             <StaffContent>
-              <SliderButtonsContainer>
-                <SliderButton onClick={() => paginate(-1)}>
-                  <Image
-                    src='/svg/SliderArrow_white.svg'
-                    alt='Previous'
-                    width={39}
-                    height={39}
-                  />
-                </SliderButton>
-                <SliderButton onClick={() => paginate(1)}>
-                  <Image
-                    src='/svg/SliderArrow_white.svg'
-                    alt='Next'
-                    width={39}
-                    height={39}
-                  />
-                </SliderButton>
-              </SliderButtonsContainer>
               <h2>{staffMembers[index].name}</h2>
               <h4>{staffMembers[index].title}</h4>
               {(!smallScreen || showAllBio
@@ -414,6 +447,38 @@ export const MeetStaffSlider: React.FC<Props> = () => {
             </MeetStaffLink>
           </MotionDiv>
         </AnimatePresence>
+        <ListItemsContainer>
+          <SliderButton onClick={() => paginate(-1)}>
+            <Image
+              src='/svg/SliderArrow_white.svg'
+              alt='Previous'
+              width={39}
+              height={39}
+            />
+          </SliderButton>
+          {staffMembers.map((staffMember, i) => (
+            <StaffMemberPreviewItem
+              onClick={() => goToPage(i)}
+              className={index === i ? 'selected' : ''}
+              key={i}
+            >
+              <Image
+                src={staffMember.img1Src}
+                alt={staffMember.name}
+                fill
+                sizes='80px'
+              />
+            </StaffMemberPreviewItem>
+          ))}
+          <SliderButton onClick={() => paginate(1)}>
+            <Image
+              src='/svg/SliderArrow_white.svg'
+              alt='Next'
+              width={39}
+              height={39}
+            />
+          </SliderButton>
+        </ListItemsContainer>
       </Container>
       <AllStaffSlider />
     </>
