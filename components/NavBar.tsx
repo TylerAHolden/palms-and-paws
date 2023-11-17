@@ -1,4 +1,5 @@
 import { BsFillPeopleFill, BsFillTelephoneFill } from 'react-icons/bs';
+import { ONLINE_PHARMACY_LINK, PET_PORTAL_LINK } from '../CONSTANTS';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useCycle } from 'framer-motion';
 
@@ -9,7 +10,6 @@ import { MdMedicalServices } from 'react-icons/md';
 import { MenuToggle } from './MenuToggle';
 import { MobileMenu } from './MobileMenu';
 import NoScrollLink from './NoScrollLink';
-import { PET_PORTAL_LINK } from '../CONSTANTS';
 import { styled } from 'goober';
 
 type Props = {};
@@ -22,7 +22,7 @@ const NavBarContainer = styled('div')`
   position: sticky;
   z-index: 999;
   background: rgba(255, 255, 255, 0.6);
-  @media (max-width: 900px) {
+  @media (max-width: 1040px) {
     margin-bottom: -20px;
   }
   @media (max-width: 600px) {
@@ -68,14 +68,19 @@ const NavbarInnerContainer = styled('div')`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  @media (max-width: 900px) {
+  overflow: hidden;
+  @media (max-width: 1300px) {
+    margin: 0 -20px;
+    width: calc(100% + 40px);
+  }
+  @media (max-width: 1040px) {
     padding-left: var(--page-side-padding);
     padding-right: var(--page-side-padding);
   }
 `;
 
 const NavbarLinksContainer = styled('div')`
-  @media (max-width: 900px) {
+  @media (max-width: 1040px) {
     display: none;
   }
   flex: 1;
@@ -84,8 +89,8 @@ const NavbarLinksContainer = styled('div')`
   &.left {
     justify-content: flex-end;
     margin-right: 40px;
-    @media (max-width: 1150px) {
-      margin-right: 25px;
+    @media (max-width: 1250px) {
+      margin-right: 5px;
     }
     @media (max-width: 970px) {
       margin-right: 0px;
@@ -94,8 +99,8 @@ const NavbarLinksContainer = styled('div')`
   &.right {
     justify-content: flex-start;
     margin-left: 40px;
-    @media (max-width: 1150px) {
-      margin-left: 25px;
+    @media (max-width: 1250px) {
+      margin-left: 5px;
     }
     @media (max-width: 970px) {
       margin-left: 0px;
@@ -144,8 +149,8 @@ const NavbarLink = styled('div')`
     transition: all 100ms ease-in-out;
     text-decoration: none;
     position: relative;
-    @media (max-width: 1300px) {
-      padding: 10px 20px;
+    @media (max-width: 1450px) {
+      padding: 10px 12px;
       font-size: 15px;
     }
 
@@ -191,11 +196,16 @@ export const PetPortalButton = styled('a')`
     white-space: nowrap;
     color: white;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: 1450px) {
+    padding: 10px 14px;
     margin-left: 15px;
     p {
       font-size: 13px;
     }
+  }
+
+  @media (max-width: 1040px) {
+    margin-bottom: 10px;
   }
 
   @media (max-width: 1100px) {
@@ -214,7 +224,7 @@ export const PetPortalButton = styled('a')`
 
 const MobileSpacer = styled('div')`
   display: none;
-  @media (max-width: 900px) {
+  @media (max-width: 1040px) {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -280,17 +290,17 @@ export const NavBar: React.FC<Props> = () => {
               <p>Hospital</p>
             </NoScrollLink>
           </NavbarLink>
-        </NavbarLinksContainer>
-        <NoScrollLink href='/'>
-          <Logo />
-        </NoScrollLink>
-        <NavbarLinksContainer className='right'>
           <NavbarLink>
             <NoScrollLink href='/our-people' passHref>
               <BsFillPeopleFill />
               <p>Our People</p>
             </NoScrollLink>
           </NavbarLink>
+        </NavbarLinksContainer>
+        <NoScrollLink href='/'>
+          <Logo />
+        </NoScrollLink>
+        <NavbarLinksContainer className='right'>
           <NavbarLink>
             <NoScrollLink href='tel:+18667256729' passHref>
               <BsFillTelephoneFill />
@@ -304,6 +314,13 @@ export const NavBar: React.FC<Props> = () => {
             rel='noreferrer noopener'
           >
             <p>Book Appointment</p>
+          </PetPortalButton>
+          <PetPortalButton
+            href={ONLINE_PHARMACY_LINK}
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            <p>Online Pharmacy</p>
           </PetPortalButton>
           {/* </PerPortalButtonContainer> */}
         </NavbarLinksContainer>

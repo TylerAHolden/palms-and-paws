@@ -18,15 +18,15 @@ const FullLogoContainer = styled('div')`
   margin-top: -10px;
   margin-bottom: -10px;
   @media (max-width: 1300px) {
-    width: 222px;
+    width: 202px;
   }
 
   @media (max-width: 1100px) {
-    width: 212px;
+    width: 192px;
   }
 
   @media (max-width: 500px) {
-    width: 190px;
+    width: 170px;
   }
 `;
 
