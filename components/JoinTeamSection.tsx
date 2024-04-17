@@ -2,6 +2,7 @@ import { Animation } from './Animations';
 import { Button } from './Buttons';
 import React from 'react';
 import { styled } from 'goober';
+import { useRouter } from 'next/router';
 
 type Props = {};
 
@@ -59,9 +60,7 @@ const AnimationContainer = styled('div')`
 `;
 
 export const JoinTeamSection: React.FC<Props> = () => {
-  const mailToLink = () => {
-    window.open(String('mailto:recruitment@palmspawsvet.com'));
-  };
+  const router = useRouter();
 
   return (
     <Container>
@@ -73,7 +72,9 @@ export const JoinTeamSection: React.FC<Props> = () => {
             both at ease? Or maybe you’re looking to join a team that allows
             your love of animals to shine? We would love to hear from you.
           </p>
-          <Button onClick={mailToLink}>APPLY TO OUR TEAM</Button>
+          <Button onClick={() => router.push('/join-the-team')}>
+            APPLY TO OUR TEAM
+          </Button>
         </InfoContent>
         <AnimationContainer>
           <Animation path='/animations/dogBall.json' />

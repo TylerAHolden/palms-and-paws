@@ -326,7 +326,7 @@ export const Footer: React.FC<Props> = () => {
                 </NoScrollLink>
               </ListItem>
               <ListItem>
-                <NoScrollLink href='/our-people'>Join the Team</NoScrollLink>
+                <NoScrollLink href='/join-the-team'>Join the Team</NoScrollLink>
               </ListItem>
             </FooterListContainer>
             <FooterListContainer>
