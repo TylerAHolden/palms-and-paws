@@ -365,10 +365,12 @@ export default function CareersPage() {
                   </InputContainer>
                 </HalfInputContainers>
 
-                <label htmlFor='role'>Desired Role (Select Below)</label>
+                <label htmlFor='desired_role'>
+                  Desired Role (Select Below)
+                </label>
                 <input
-                  id='role'
-                  name='role'
+                  id='desired_role'
+                  name='desired_role'
                   type='text'
                   value={role}
                   readOnly
@@ -390,10 +392,12 @@ export default function CareersPage() {
                     );
                   })}
                 </RoleContainer>
-                <label htmlFor='aboutYourself'>Tell us about yourself</label>
+                <label htmlFor='tell_us_about_yourself'>
+                  Tell us about yourself
+                </label>
                 <textarea
-                  id='aboutYourself'
-                  name='aboutYourself'
+                  id='tell_us_about_yourself'
+                  name='tell_us_about_yourself'
                   rows={4}
                   value={aboutYourself}
                   onChange={(e) => setAboutYourself(e.target.value)}
@@ -401,16 +405,16 @@ export default function CareersPage() {
                 />
                 <ValidationError
                   prefix='Field'
-                  field='aboutYourself'
+                  field='tell_us_about_yourself'
                   errors={state.errors}
                 />
 
-                <label htmlFor='whoAdmire'>
+                <label htmlFor='who_do_you_admire_most_and_why'>
                   Who do you admire most and why?
                 </label>
                 <textarea
-                  id='whoAdmire'
-                  name='whoAdmire'
+                  id='who_do_you_admire_most_and_why'
+                  name='who_do_you_admire_most_and_why'
                   rows={4}
                   value={whoAdmire}
                   onChange={(e) => setWhoAdmire(e.target.value)}
@@ -418,17 +422,17 @@ export default function CareersPage() {
                 />
                 <ValidationError
                   prefix='Field'
-                  field='whoAdmire'
+                  field='who_do_you_admire_most_and_why'
                   errors={state.errors}
                 />
 
-                <label htmlFor='whatDoYouNeed'>
+                <label htmlFor='what_do_you_need_most_to_succeed'>
                   What do you need most to succeed professionally as well as
                   personally?
                 </label>
                 <textarea
-                  id='whatDoYouNeed'
-                  name='whatDoYouNeed'
+                  id='what_do_you_need_most_to_succeed'
+                  name='what_do_you_need_most_to_succeed'
                   rows={4}
                   value={whatDoYouNeed}
                   onChange={(e) => setWhatDoYouNeed(e.target.value)}
@@ -436,17 +440,17 @@ export default function CareersPage() {
                 />
                 <ValidationError
                   prefix='Field'
-                  field='whatDoYouNeed'
+                  field='what_do_you_need_most_to_succeed'
                   errors={state.errors}
                 />
 
-                <label htmlFor='favTeam'>
+                <label htmlFor='describe_fav_team_or_work_env'>
                   Describe your favorite team or work environment and what made
                   it so incredible? (Does not need to be veterinary related)
                 </label>
                 <textarea
-                  id='favTeam'
-                  name='favTeam'
+                  id='describe_fav_team_or_work_env'
+                  name='describe_fav_team_or_work_env'
                   rows={4}
                   value={favTeam}
                   onChange={(e) => setFavTeam(e.target.value)}
@@ -454,14 +458,16 @@ export default function CareersPage() {
                 />
                 <ValidationError
                   prefix='Field'
-                  field='favTeam'
+                  field='describe_fav_team_or_work_env'
                   errors={state.errors}
                 />
 
-                <label htmlFor='passion'>Describe a passion of yours</label>
+                <label htmlFor='describe_a_passion_of_yours'>
+                  Describe a passion of yours
+                </label>
                 <textarea
-                  id='passion'
-                  name='passion'
+                  id='describe_a_passion_of_yours'
+                  name='describe_a_passion_of_yours'
                   rows={4}
                   value={passion}
                   onChange={(e) => setPassion(e.target.value)}
@@ -469,7 +475,7 @@ export default function CareersPage() {
                 />
                 <ValidationError
                   prefix='Field'
-                  field='passion'
+                  field='describe_a_passion_of_yours'
                   errors={state.errors}
                 />
 
