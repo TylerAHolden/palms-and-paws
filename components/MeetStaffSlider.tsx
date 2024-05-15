@@ -289,7 +289,7 @@ const staffMembers = [
   },
   {
     name: 'Phil Ahn, DVM',
-    title: 'Associate Veterinarian (Joining October 2023!)',
+    title: 'Associate Veterinarian',
     bio: `A native of Los Angeles, Dr. Phil Ahn is proud to be practicing veterinary medicine near his hometown. He has had a passion for animals as a child and believes his early memories with his family's Labrador Retriever and Shih Tzu paved the way for his path to becoming a veterinarian. Dr. Ahn loves the ability to help and heal his patients by collaborating with their owners to form realistic plans and expectations. He finds joy in making a difference in people's lives through their connection with their pets, knowing that they share a very powerful bond.
  \n
     Dr. Ahn attended Cal Poly Pomona for his undergraduate education and Western University of Health Sciences for his doctorate of veterinary medicine. His interests include dermatology, dentistry, internal medicine, surgery, preventative medicine, and emergency medicine (not in any particular order). Dr. Ahn has also taken the holistic medicine/acupuncture course at the Chi Institute in Florida and looks for ways to practice integrative medicine. He soon hopes to marry his fiance who is also a veterinarian. Together they share a very sweet, scruffy terrier mix named Poppy and a crotchety, older cat named Ethyl.`,
@@ -303,6 +303,15 @@ const staffMembers = [
  \n
     These days he lives in Santa Monica and spends most of his time outside of work training to become an elite pickleball player, enjoying spicy noodles, and reading. He remains passionate and enthusiastic for helping pets and people in any way he can through his professional expertise. His current focus is limited to dogs and cats - unfortunately no wolves at this time.`,
     img1Src: '/images/jacob-image-1.jpg',
+    // img2Src: '/images/jacob-image-1.jpg',
+  },
+  {
+    name: 'Rachel Park, DVM',
+    title: 'Associate Veterinarian',
+    bio: `Dr. Rachel Park is excited to integrate her veterinary experience with the Palms & Paws community! Her love for veterinary medicine is rooted in a special bond with her childhood dog and early involvement in community medicine. Through close communication and personalized attention, Dr. Park believes that veterinary care can empower pet parents and strengthen the relationship they have with their beloved pets.
+    \n
+    Dr. Park completed her undergraduate studies at Brown University, and earned her doctorate of veterinary medicine from Tufts University. Upon graduation, she worked at a clinic caring for dogs and cats in the heart of New York City. She is interested in preventative medicine, neurology, diagnostic imaging, and surgery. Outside the clinic, Dr. Park can be found painting, hiking scenic trails with her dog Belle, snuggling her senior cat Macie, and looking for the finest dessert spots.`,
+    img1Src: '/images/rachel-image-1.jpg',
     // img2Src: '/images/jacob-image-1.jpg',
   },
   // {

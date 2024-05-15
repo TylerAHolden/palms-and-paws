@@ -81,11 +81,11 @@ const ITEMS = [
   //   title: 'Client Service Coordinator',
   //   img: '/images/staff/Hasina.jpg',
   // },
-  {
-    name: 'Ana',
-    title: 'Veterinary Assistant',
-    img: '/images/staff/Ana.jpg',
-  },
+  // {
+  //   name: 'Ana',
+  //   title: 'Veterinary Assistant',
+  //   img: '/images/staff/Ana.jpg',
+  // },
   // {
   //   name: 'Ngoki',
   //   title: 'Veterinary Assistant',
