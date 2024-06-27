@@ -92,7 +92,7 @@ const ITEMS = [
     </ul>
   </>,
   <>
-    <h4>Same Day Appointments</h4>
+    <h4>Limited Same Day Appointments Available</h4>
     <p>
       For concerns that can’t wait for a routine appointment, we hold open a
       block of urgent care appointments available daily. Urgent medical needs

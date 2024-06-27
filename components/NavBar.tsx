@@ -252,8 +252,6 @@ export const NavBar: React.FC<Props> = () => {
   return (
     <NavBarContainer className={`${isAtTop ? 'top' : ''}`}>
       <AnnouncementBar>
-        <p>Same Day Appointments Available</p>
-
         <strong>
           <p>
             <a href='tel:+18667256729'>1-866-PALMPAW (725-6729)</a>
