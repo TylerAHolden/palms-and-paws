@@ -106,11 +106,11 @@ const ITEMS = [
   //   title: 'Client Service Coordinator',
   //   img: '/images/staff/Grace.jpg',
   // },
-  {
-    name: 'Xochil',
-    title: 'Veterinary Assistant',
-    img: '/images/staff/Xochil.jpg',
-  },
+  // {
+  //   name: 'Xochil',
+  //   title: 'Veterinary Assistant',
+  //   img: '/images/staff/Xochil.jpg',
+  // },
   {
     name: 'Diego',
     title: 'Veterinary Technician',
