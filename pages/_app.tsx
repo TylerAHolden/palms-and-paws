@@ -9,7 +9,7 @@ import { DefaultSeo } from 'next-seo';
 import { Footer } from '../components/Footer';
 import Head from 'next/head';
 import { NavBar } from '../components/NavBar';
-import { PopUp } from '../components/PopUp';
+// import { PopUp } from '../components/PopUp';
 import { prefix } from 'goober/prefixer';
 import { setup } from 'goober';
 
@@ -70,7 +70,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Component {...pageProps} canonical={url} key={url} />
       </AnimatePresence>
       <Footer />
-      <PopUp />
+      {/* <PopUp /> */}
       <Analytics />
     </>
   );

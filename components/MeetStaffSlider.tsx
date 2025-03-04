@@ -294,7 +294,6 @@ const staffMembers = [
  \n
     Dr. Ahn attended Cal Poly Pomona for his undergraduate education and Western University of Health Sciences for his doctorate of veterinary medicine. His interests include dermatology, dentistry, internal medicine, surgery, preventative medicine, and emergency medicine (not in any particular order). Dr. Ahn has also taken the holistic medicine/acupuncture course at the Chi Institute in Florida and looks for ways to practice integrative medicine. He soon hopes to marry his fiance who is also a veterinarian. Together they share a very sweet, scruffy terrier mix named Poppy and a crotchety, older cat named Ethyl.`,
     img1Src: '/images/phil-image-1.jpg',
-    // img2Src: '/images/phil-image-1.jpg',
   },
   {
     name: 'Jacob Wolf, DVM',
@@ -303,7 +302,6 @@ const staffMembers = [
  \n
     These days he lives in Santa Monica and spends most of his time outside of work training to become an elite pickleball player, enjoying spicy noodles, and reading. He remains passionate and enthusiastic for helping pets and people in any way he can through his professional expertise. His current focus is limited to dogs and cats - unfortunately no wolves at this time.`,
     img1Src: '/images/jacob-image-1.jpg',
-    // img2Src: '/images/jacob-image-1.jpg',
   },
   {
     name: 'Rachel Park, DVM',
@@ -312,7 +310,14 @@ const staffMembers = [
     \n
     Dr. Park completed her undergraduate studies at Brown University, and earned her doctorate of veterinary medicine from Tufts University. Upon graduation, she worked at a clinic caring for dogs and cats in the heart of New York City. She is interested in preventative medicine, neurology, diagnostic imaging, and surgery. Outside the clinic, Dr. Park can be found painting, hiking scenic trails with her dog Belle, snuggling her senior cat Macie, and looking for the finest dessert spots.`,
     img1Src: '/images/rachel-image-1.jpg',
-    // img2Src: '/images/jacob-image-1.jpg',
+  },
+  {
+    name: 'Ying Zhi Lim, DVM, CVA',
+    title: 'Associate Veterinarian',
+    bio: `Dr. Ying Zhi Lim grew up in the bustling city of Singapore and knew she always wanted to be a vet when her first word was “woof”. She knew the only way she would be able to have a pet dog was to place bets with her parents and get into a well-ranked school. From then on, her hardworking personality drove her to study hard and move halfway around the world to study Ecology, Behavior, and Evolution at UCLA. She then moved up to the small town of Davis to receive her veterinary degree from UC Davis. After graduating, her need to live in a city with good food and weather drove her back down to the bustling city of Los Angeles. Dr. Lim is fluent in both English and Mandarin. 
+    \n
+    Dr. Lim is interested in internal medicine, surgery, integrative medicine and fear-free care. She is certified in veterinary acupuncture and plans to incorporate that with everyday medicine to bring a well-rounded approach to medicine. In her free time, Dr. Lim loves to cook, bake, craft and eat amazing and interesting food from all over Los Angeles.`,
+    img1Src: '/images/ying-zhi-lim.jpg',
   },
   // {
   //   name: 'Samantha Fahmi',
