@@ -319,6 +319,12 @@ const staffMembers = [
     Dr. Lim is interested in internal medicine, surgery, integrative medicine and fear-free care. She is certified in veterinary acupuncture and plans to incorporate that with everyday medicine to bring a well-rounded approach to medicine. In her free time, Dr. Lim loves to cook, bake, craft and eat amazing and interesting food from all over Los Angeles.`,
     img1Src: '/images/ying-zhi-lim.jpg',
   },
+  {
+    name: 'Isabelle Gerbatsch, DVM',
+    title: 'Associate Veterinarian',
+    bio: `Dr. Isabelle “Izzy” Gerbatsch is a San Diego native whose journey in veterinary medicine has taken her across the country and through a wide range of experiences! She earned her veterinary degree from Iowa State University College of Veterinary Medicine in 2017, supported by the U.S. Army Health Professionals Scholarship. Upon graduation, she was commissioned as a Captain in the U.S. Army Veterinary Corps. During her service, Dr. Izzy completed a competitive year-long internship at Fort Carson, Colorado, focusing on veterinary medicine, public health, and leadership. Over the next four years, she cared for military working dogs and the pets of service members, managed a veterinary hospital, trained Soldiers for deployment, and even worked shifts at a local emergency hospital. Following her military career, she returned to civilian practice in La Jolla and Fresno before relocating to Los Angeles with her husband, two children, and their two dogs—BB8 and Captain Han Solo. Dr. Izzy has a special interest in internal medicine, dermatology, and soft tissue surgery. Outside the clinic, you’ll likely find her hiking, soaking up the sun at the beach, or planning her next travel adventure.`,
+    img1Src: '/images/izzy-image-1.jpg',
+  },
   // {
   //   name: 'Samantha Fahmi',
   //   title: 'Lead Client Service Coordinator',
