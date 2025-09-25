@@ -18,7 +18,8 @@
 
 @font-face {
   font-family: 'Argent CF';
-  src: url('/fonts/ArgentCFRegular.otf') format('opentype');
+  src: url('/fonts/Argent-Regular.woff2') format('woff2'),
+    url('/fonts/Argent-Regular.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
@@ -27,7 +28,8 @@
 
 @font-face {
   font-family: 'Argent CF';
-  src: url('/fonts/ArgentCFRegularItalic.otf') format('opentype');
+  src: url('/fonts/Argent-RegularItalic.woff2') format('woff2'),
+    url('/fonts/Argent-RegularItalic.woff') format('woff');
   font-weight: 600;
   font-style: italic;
   font-stretch: normal;
