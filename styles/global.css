@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Maison Neue';
-  src: url('/fonts/MaisonNeue-Book.otf') format('opentype');
+  src: url('/fonts/MaisonNeueBook/font.woff2') format('woff2'),
+    url('/fonts/MaisonNeueBook/font.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -9,7 +10,8 @@
 
 @font-face {
   font-family: 'Maison Neue';
-  src: url('/fonts/MaisonNeueTRIAL-Bold.otf') format('opentype');
+  src: url('/fonts/MaisonNeueBold/font.woff2') format('woff2'),
+    url('/fonts/MaisonNeueBold/font.woff') format('woff');
   font-weight: 600;
   font-style: normal;
   font-stretch: normal;
