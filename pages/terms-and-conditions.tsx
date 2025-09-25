@@ -28,9 +28,9 @@ export default function TermsAndConditionsPage() {
           </p>
           <p>
             Welcome to Palmspawsvet.com (the “Website”), operated by Palms &amp;
-            Paws Veterinary Center, LLC (“Company,” “we,” “our,” or “us”). These
-            Terms and Conditions (“Terms”) govern your use of our services,
-            websites, platforms, social media, applications, mobile
+            Paws Veterinary Center, Inc. (“Company,” “we,” “our,” or “us”).
+            These Terms and Conditions (“Terms”) govern your use of our
+            services, websites, platforms, social media, applications, mobile
             applications, PLUS subscription membership and all other business
             and services provided by the Company (collectively “Services”). By
             accessing or using the Services, you agree to be bound by these
