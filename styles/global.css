@@ -1,3 +1,27 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3867246, 2020-12-16T11:57:38-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Maison Neue Book by Milieu Grotesque
+ * URL: https://www.myfonts.com/collections/milieu-grotesque-foundry
+
+ * Webfont: Maison Neue Mono Italic by Milieu Grotesque
+ * URL: https://www.myfonts.com/collections/milieu-grotesque-foundry
+
+ * Webfont: Maison Neue Mono Regular by Milieu Grotesque
+ * URL: https://www.myfonts.com/collections/milieu-grotesque-foundry
+
+ * Webfont: Maison Neue Bold by Milieu Grotesque
+ * URL: https://www.myfonts.com/collections/milieu-grotesque-foundry
+ 
+ * © 2025 MyFonts Inc. */
+
 @font-face {
   font-family: 'Maison Neue';
   src: url('/fonts/MaisonNeueBook/font.woff2') format('woff2'),
