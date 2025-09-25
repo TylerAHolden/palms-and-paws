@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Button } from './Buttons';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Logo } from './Logo';
 import NoScrollLink from './NoScrollLink';
 import { PET_PORTAL_LINK } from '../CONSTANTS';
@@ -36,6 +34,19 @@ const FlexContainer = styled('div')`
   }
 `;
 
+const LegalContainer = styled('div')`
+  display: flex;
+  padding-top: 40px;
+  margin-top: 40px;
+  border-top: 1px solid black;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
+
 const CopyrightFlexContainer = styled('div')`
   display: flex;
   flex-wrap: wrap;
@@ -55,8 +66,8 @@ const MadeBy = styled('p')`
   && {
     @media (max-width: 700px) {
       padding-top: 20px;
-      order 3;
-  }
+      order: 3;
+    }
     opacity: 0.14;
     font-size: 12px;
     margin: 0;
@@ -235,6 +246,24 @@ const ListItem = styled('p')`
   }
 `;
 
+const LegalListItem = styled('p')`
+  margin: 0 12px;
+  a {
+    padding: 4px 0;
+    display: block;
+    font-size: 12px;
+  }
+  a,
+  span {
+    text-decoration: none;
+    opacity: 0.55;
+    &:hover {
+      opacity: 0.65;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+`;
+
 const LinksContainer = styled('div')`
   display: flex;
   flex-wrap: wrap;
@@ -375,6 +404,19 @@ export const Footer: React.FC<Props> = () => {
             </FooterListContainer>
           </LinksContainer>
         </FlexContainer>
+        <LegalContainer>
+          <LegalListItem>
+            <NoScrollLink href='/privacy-policy'>Privacy Policy</NoScrollLink>
+          </LegalListItem>
+          <LegalListItem>
+            <NoScrollLink href='/terms-and-conditions'>
+              Terms and Conditions
+            </NoScrollLink>
+          </LegalListItem>
+          <LegalListItem>
+            <NoScrollLink href='/cookies-policy'>Cookies Policy</NoScrollLink>
+          </LegalListItem>
+        </LegalContainer>
         <FooterLineBreak />
         <CopyrightFlexContainer>
           <p>Copyright {new Date().getFullYear()} Palms & Paws</p>
