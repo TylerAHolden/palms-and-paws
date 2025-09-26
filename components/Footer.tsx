@@ -429,7 +429,7 @@ export const Footer: React.FC<Props> = () => {
             >
               The Social Tale
             </a>{' '}
-            + Tyler Holden
+            + T.A.H. & Associates
           </MadeBy>
           <SocialIconsContainer>
             <SocialIconLink
