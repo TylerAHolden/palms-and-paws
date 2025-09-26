@@ -50,6 +50,14 @@ class Document extends NextDocument<Props> {
             // And defined it in here
             dangerouslySetInnerHTML={{ __html: ' ' + this.props.css }}
           />
+          <script
+            async
+            id='Cookiebot'
+            src='https://consent.cookiebot.com/uc.js'
+            data-cbid='27390673-5938-461f-9ca0-8282700e0b15'
+            data-blockingmode='auto'
+            type='text/javascript'
+          ></script>
         </Head>
         <body>
           <Main />
@@ -58,7 +66,12 @@ class Document extends NextDocument<Props> {
             async
             defer
             type='text/javascript'
+            data-cookieconsent='marketing'
             src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SuGeZs'
+          ></script>
+          <script
+            src='https://website-widgets.pages.dev/dist/sienna.min.js'
+            defer
           ></script>
         </body>
       </Html>
