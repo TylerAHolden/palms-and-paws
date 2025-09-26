@@ -65,7 +65,7 @@ class Document extends NextDocument<Props> {
           <script
             async
             defer
-            type='text/javascript'
+            type='text/plain'
             data-cookieconsent='marketing'
             src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SuGeZs'
           ></script>
