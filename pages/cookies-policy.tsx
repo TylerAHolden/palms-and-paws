@@ -1,4 +1,5 @@
 import Layout from '../components/Layout';
+import Link from 'next/link';
 import { styled } from 'goober';
 
 const Section = styled('section')`
@@ -42,7 +43,7 @@ export default function CookiesPolicyPage() {
             <strong>Palms &amp; Paws Veterinary Center, Inc.</strong>{' '}
             (“Company,” “we,” “us,” or “our”) uses cookies and similar
             technologies when you visit our website
-            <a href='https://palmspawsvet.com'>palmspawsvet.com</a> (the
+            <Link href='https://palmspawsvet.com'>palmspawsvet.com</Link> (the
             “Website”).
           </p>
           <p>
@@ -52,7 +53,7 @@ export default function CookiesPolicyPage() {
           </p>
           <p>
             This Policy should be read together with our{' '}
-            <a href='/privacy-policy'>Privacy Policy</a> for a full
+            <Link href='/privacy-policy'>Privacy Policy</Link> for a full
             understanding of how we process personal data.
           </p>
 
